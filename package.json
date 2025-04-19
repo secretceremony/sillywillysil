@@ -1,21 +1,27 @@
 {
   "name": "sillywillysil",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.",
+  "main": "vite.config.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/secretceremony/sillywillysil.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/secretceremony/sillywillysil/issues"
+  },
+  "homepage": "https://github.com/secretceremony/sillywillysil#readme",
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@mdi/font": "^7.4.47",
-    "vue": "^3.5.13",
-    "vuetify": "^3.0.0"
+    "emailjs": "^4.0.3",
+    "vuetify": "^3.8.0-beta.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.2",
-    "vite": "^6.3.1"
+    "vite-plugin-vuetify": "^2.1.1"
   }
 }
