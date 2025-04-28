@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="bg-primary text-white text-center">
-      <v-container class="py-10">
+      <v-container class="py-10 py-md-16">
         <v-row align="center" justify="center">
           <v-col cols="12" md="6">
             <h1 class="text-h3 text-md-h2 font-weight-bold mb-4">
@@ -15,191 +15,220 @@
             <v-img
               src="https://f2.toyhou.se/file/f2-toyhou-se/images/83678880_aJHpskTmwUZ4rU0.png"
               contain
+              max-height="400"
             ></v-img>
           </v-col>
         </v-row>
       </v-container>
     </section>
 
-    <section class="bg-surface py-8">
+    <section class="bg-surface py-10 py-md-16">
       <v-container>
         <v-row align="start" justify="center">
           <v-col cols="12" md="6">
             <h3 class="text-h5 font-weight-bold mb-6">Education</h3>
 
-             <div> <v-row dense>
-                     <v-col cols="12" sm="4">
-                         <div class="font-weight-bold text-subtitle-1">2019 - 2023</div>
-                     </v-col>
-                     <v-col cols="12" sm="8">
-                         <div class="font-weight-bold text-subtitle-1">Software Engineering</div>
-                         <div class="text-body-1 text-medium-emphasis">SMK Negeri 6 Balikpapan</div>
-                     </v-col>
-                 </v-row>
-             </div>
+            <div>
+              <v-row dense>
+                <v-col cols="12" sm="4">
+                  <div class="font-weight-bold text-subtitle-1">2019 - 2023</div>
+                </v-col>
+                <v-col cols="12" sm="8">
+                  <div class="font-weight-bold text-subtitle-1">Software Engineering</div>
+                  <div class="text-body-1 text-medium-emphasis">SMK Negeri 6 Balikpapan</div>
+                </v-col>
+              </v-row>
+            </div>
 
-              <v-divider class="my-4"></v-divider>
+            <v-divider class="my-4"></v-divider>
 
-             <div> <v-row dense>
-                     <v-col cols="12" sm="4">
-                         <div class="font-weight-bold text-subtitle-1">2023 - Present</div>
-                     </v-col>
-                     <v-col cols="12" sm="8">
-                         <div class="font-weight-bold text-subtitle-1">Information Systems</div>
-                         <div class="text-body-1 text-medium-emphasis">Institute Technology of Kalimantan</div>
-                     </v-col>
-                 </v-row>
-             </div>
-
-             </v-col>
+            <div>
+              <v-row dense>
+                <v-col cols="12" sm="4">
+                  <div class="font-weight-bold text-subtitle-1">2023 - Present</div>
+                </v-col>
+                <v-col cols="12" sm="8">
+                  <div class="font-weight-bold text-subtitle-1">Information Systems</div>
+                  <div class="text-body-1 text-medium-emphasis">Institute Technology of Kalimantan</div>
+                </v-col>
+              </v-row>
+            </div>
+          </v-col>
 
           <v-col cols="12" md="6">
             <h3 class="text-h5 font-weight-bold mb-6">Experience</h3>
 
-             <div> <v-row dense>
-                     <v-col cols="12" sm="4">
-                         <div class="font-weight-bold text-subtitle-1">2022</div>
-                     </v-col>
-                     <v-col cols="12" sm="8">
-                         <div class="font-weight-bold text-subtitle-1">Internship</div>
-                         <div class="text-body-1 text-medium-emphasis">PT TELKOM Region VI Kalimantan</div>
-                         <p class="text-body-2 mt-1">
-                              I worked for three months and learned about the company's operations and software development processes.
-                         </p>
-                     </v-col>
-                 </v-row>
-             </div>
+            <div>
+              <v-row dense>
+                <v-col cols="12" sm="4">
+                  <div class="font-weight-bold text-subtitle-1">2022</div>
+                </v-col>
+                <v-col cols="12" sm="8">
+                  <div class="font-weight-bold text-subtitle-1">Internship</div>
+                  <div class="text-body-1 text-medium-emphasis">PT TELKOM Region VI Kalimantan</div>
+                  <p class="text-body-2 mt-1">
+                    I worked for three months and learned about the company's operations and software development processes.
+                  </p>
+                </v-col>
+              </v-row>
+            </div>
 
-              <v-divider class="my-4"></v-divider>
+            <v-divider class="my-4"></v-divider>
 
-             <div> <v-row dense>
-                     <v-col cols="12" sm="4">
-                         <div class="font-weight-bold text-subtitle-1">2023 - Present</div>
-                     </v-col>
-                     <v-col cols="12" sm="8">
-                         <div class="font-weight-bold text-subtitle-1">Administrator</div>
-                         <div class="text-body-1 text-medium-emphasis">Bank Sampah WANIPORA</div>
-                         <p class="text-body-2 mt-1">
-                              I am responsible for managing the waste bank operations, including data entry, and customer service.
-                         </p>
-                     </v-col>
-                 </v-row>
-             </div>
-
-             </v-col>
+            <div>
+              <v-row dense>
+                <v-col cols="12" sm="4">
+                  <div class="font-weight-bold text-subtitle-1">2023 - Present</div>
+                </v-col>
+                <v-col cols="12" sm="8">
+                  <div class="font-weight-bold text-subtitle-1">Administrator</div>
+                  <div class="text-body-1 text-medium-emphasis">Bank Sampah WANIPORA</div>
+                  <p class="text-body-2 mt-1">
+                    I am responsible for managing the waste bank operations, including data entry, and customer service.
+                  </p>
+                </v-col>
+              </v-row>
+            </div>
+          </v-col>
         </v-row>
       </v-container>
     </section>
 
-    <section class="bg-white py-8">
+    <section class="bg-primary text-white py-10 py-md-16">
       <v-container>
         <h2 class="text-h4 font-weight-bold text-center mb-6">Zine Contributions</h2>
 
         <v-row align="start" justify="center">
           <v-col cols="12" md="6">
-             <div class="mb-4">
-                 <v-row dense>
-                     <v-col cols="12" sm="4">
-                         <div class="font-weight-bold text-subtitle-1">2023</div>
-                     </v-col>
-                     <v-col cols="12" sm="8">
-                         <div class="font-weight-bold text-subtitle-1 mb-1">
-                             <a href="https://heyzine.com/flip-book/b6986b2e30.html" target="_blank" class="text-decoration-none text-primary">
-                                 VOID SPACE ZINE PROJECT
-                             </a> | Project Manager
-                         </div>
-                         <p class="text-body-2 text-medium-emphasis">
-                              A zine project that focuses on the daily life of void space. I was responsible for managing the project and coordinating with artists.
-                         </p>
-                     </v-col>
-                 </v-row>
-             </div>
+            <div class="mb-4">
+              <v-row dense>
+                <v-col cols="12" sm="4">
+                  <div class="font-weight-bold text-subtitle-1">2023</div>
+                </v-col>
+                <v-col cols="12" sm="8">
+                  <div class="font-weight-bold text-subtitle-1 mb-1">
+                    <a href="https://heyzine.com/flip-book/b6986b2e30.html" target="_blank" class="text-decoration-none text-white">
+                      VOID SPACE ZINE PROJECT
+                    </a> | Project Manager
+                  </div>
+                  <p class="text-body-2 text-medium-emphasis text-white">
+                    A zine project that focuses on the daily life of void space. I was responsible for managing the project and coordinating with artists.
+                  </p>
+                </v-col>
+              </v-row>
+            </div>
 
-              <v-divider class="my-4"></v-divider>
+            <v-divider class="my-4"></v-divider>
 
-              <div class="mb-4">
-                  <v-row dense>
-                     <v-col cols="12" sm="4">
-                         <div class="font-weight-bold text-subtitle-1">2020</div>
-                     </v-col>
-                     <v-col cols="12" sm="8">
-                         <div class="font-weight-bold text-subtitle-1 mb-1">
-                              <a href="https://x.com/witchoftimezine" target="_blank" class="text-decoration-none text-primary">
-                                  WITCH OF TIME ZINE
-                              </a> | Artist
-                         </div>
-                         <p class="text-body-2 text-medium-emphasis">
-                             A zine project that focuses on Damara Megido and The Handmaid. I contributed as an artist and created a piece for the zine.
-                         </p>
-                     </v-col>
-                 </v-row>
-             </div>
-             </v-col>
+            <div class="mb-4">
+              <v-row dense>
+                <v-col cols="12" sm="4">
+                  <div class="font-weight-bold text-subtitle-1">2020</div>
+                </v-col>
+                <v-col cols="12" sm="8">
+                  <div class="font-weight-bold text-subtitle-1 mb-1">
+                    <a href="https://x.com/witchoftimezine" target="_blank" class="text-decoration-none text-white">
+                      WITCH OF TIME ZINE
+                    </a> | Artist
+                  </div>
+                  <p class="text-body-2 text-medium-emphasis text-white">
+                    A zine project that focuses on Damara Megido and The Handmaid. I contributed as an artist and created a piece for the zine.
+                  </p>
+                </v-col>
+              </v-row>
+            </div>
+          </v-col>
 
           <v-col cols="12" md="6">
-             <div class="mb-4"> <v-row dense>
-                     <v-col cols="12" sm="4">
-                         <div class="font-weight-bold text-subtitle-1">2020</div>
-                     </v-col>
-                     <v-col cols="12" sm="8">
-                         <div class="font-weight-bold text-subtitle-1 mb-1">
-                             <a href="https://x.com/VOL10_FANZINE" target="_blank" class="text-decoration-none text-primary">
-                                 Homestuck Vol.10 Fan Zine
-                             </a> | Artist
-                         </div>
-                         <p class="text-body-2 text-medium-emphasis">
-                             A zine project based on the Homestuck Vol.10 OST. I created two pieces inspired by "Creata" and "Thank You For Playing!".
-                         </p>
-                     </v-col>
-                 </v-row>
-             </div>
+            <div class="mb-4">
+              <v-row dense>
+                <v-col cols="12" sm="4">
+                  <div class="font-weight-bold text-subtitle-1">2020</div>
+                </v-col>
+                <v-col cols="12" sm="8">
+                  <div class="font-weight-bold text-subtitle-1 mb-1">
+                    <a href="https://x.com/VOL10_FANZINE" target="_blank" class="text-decoration-none text-white">
+                      Homestuck Vol.10 Fan Zine
+                    </a> | Artist
+                  </div>
+                  <p class="text-body-2 text-medium-emphasis text-white">
+                    A zine project based on the Homestuck Vol.10 OST. I created two pieces inspired by "Creata" and "Thank You For Playing!".
+                  </p>
+                </v-col>
+              </v-row>
+            </div>
 
-              <v-divider class="my-4"></v-divider>
+            <v-divider class="my-4"></v-divider>
 
-               <div class="mb-4">
-                  <v-row dense>
-                     <v-col cols="12" sm="4">
-                         <div class="font-weight-bold text-subtitle-1">2020</div>
-                     </v-col>
-                     <v-col cols="12" sm="8">
-                         <div class="font-weight-bold text-subtitle-1 mb-1">
-                             <a href="[Zine Website URL]" target="_blank" class="text-decoration-none text-primary">
-                                  Bloodswap Zine
-                             </a> | Artist
-                         </div>
-                         <p class="text-body-2 text-medium-emphasis">
-                             A zine project focusing on bloodswap in Homestuck. I contributed as an artist and created an original piece.
-                         </p>
-                     </v-col>
-                 </v-row>
-             </div>
-             </v-col>
+            <div class="mb-4">
+              <v-row dense>
+                <v-col cols="12" sm="4">
+                  <div class="font-weight-bold text-subtitle-1">2020</div>
+                </v-col>
+                <v-col cols="12" sm="8">
+                  <div class="font-weight-bold text-subtitle-1 mb-1">
+                    Bloodswap Zine | Artist
+                  </div>
+                  <p class="text-body-2 text-medium-emphasis text-white">
+                    A zine project focusing on bloodswap in Homestuck. I contributed as an artist and created a piece for the zine.
+                  </p>
+                </v-col>
+              </v-row>
+            </div>
+          </v-col>
         </v-row>
       </v-container>
     </section>
 
-    <section class="bg-white py-8">
-        <v-container>
-            <h2 class="text-h4 font-weight-bold text-center mb-6">Interests</h2>
+    <section class="bg-white py-10 py-md-16">
+      <v-container>
+        <h2 class="text-h4 font-weight-bold text-center mb-8">Interests</h2>
 
-            <v-row justify="center">
-                <v-col cols="12" md="8">
-                    <ul class="text-body-1 text-medium-emphasis">
-                        <li class="mb-2">Digital Art: Character design, illustration, concept art.</li>
-                        <li class="mb-2">UI/UX Design: Exploring user interfaces and user experience.</li>
-                        <li class="mb-2">Web Development: Building websites and learning new technologies.</li>
-                    </ul>
-                </v-col>
-            </v-row>
-        </v-container>
+        <v-row justify="center">
+          <v-col cols="12" sm="6" md="4">
+            <v-card elevation="2" class="pa-4">
+              <v-card-text class="text-center">
+                <v-icon size="48" color="primary" class="mb-4">mdi-palette</v-icon>
+                <h3 class="text-h6 font-weight-semibold mb-2">Digital Art</h3>
+                <p class="text-body-2 text-medium-emphasis">
+                  Character design, illustration, concept art.
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-col>
+
+          <v-col cols="12" sm="6" md="4">
+            <v-card elevation="2" class="pa-4">
+              <v-card-text class="text-center">
+                <v-icon size="48" color="primary" class="mb-4">mdi-monitor-cellphone</v-icon>
+                <h3 class="text-h6 font-weight-semibold mb-2">UI/UX Design</h3>
+                <p class="text-body-2 text-medium-emphasis">
+                  Exploring user interfaces and user experience.
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-col>
+
+          <v-col cols="12" sm="6" md="4">
+            <v-card elevation="2" class="pa-4">
+              <v-card-text class="text-center">
+                <v-icon size="48" color="primary" class="mb-4">mdi-code-tags</v-icon>
+                <h3 class="text-h6 font-weight-semibold mb-2">Web Development</h3>
+                <p class="text-body-2 text-medium-emphasis">
+                  Learning new technologies.
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
     </section>
 
-    <section class="bg-surface py-10"> <v-container>
-            <ContactForm />
-        </v-container>
+    <section class="bg-surface py-10 py-md-16">
+      <v-container>
+        <ContactForm />
+      </v-container>
     </section>
-
-
   </div>
 </template>
 
@@ -207,7 +236,7 @@
 import ContactForm from '../components/ContactForm.vue';
 
 export default {
-  name: 'LandingPage', // Good practice to name your component
+  name: 'LandingPage',
   components: {
     ContactForm
   },
