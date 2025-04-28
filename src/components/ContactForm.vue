@@ -1,4 +1,5 @@
 <template>
+   <h2 class="text-h4 font-weight-bold text-center mb-6">Contact Me!</h2>
     <v-container class="mt-10 contact-form" max-width="600">
       <v-form @submit.prevent="sendEmail" ref="formRef">
         <v-text-field
