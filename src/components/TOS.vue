@@ -1,51 +1,48 @@
 <template>
     <v-card flat>
       <v-card-text>
-        <h3 class="text-h6 mb-4">Terms of Service (TOS)</h3>
-        <p>Here are my terms regarding commission work:</p>
+        <h3 class="text-h6 mb-4">Terms of Service (TOS) for Commissions</h3>
+        <p>By commissioning me, you agree to the following terms:</p>
   
-        <h4>General Terms:</h4>
+        <h4>Payment:</h4>
         <ul>
-          <li class="mb-2">All prices are in [Your Currency, e.g., USD, IDR].</li>
-          <li class="mb-2">Payments are processed via [Payment Methods, e.g., PayPal, Bank Transfer].</li>
-          <li class="mb-2">A [Percentage, e.g., 50%] upfront payment is required before I start working. The remaining [Percentage] is due upon completion before delivery of the final file.</li>
-          <li class="mb-2">I reserve the right to decline any commission request for any reason.</li>
-          <li class="mb-2">Clear communication is essential. Please provide detailed references and descriptions.</li>
-          <li>Turnaround time varies depending on the complexity and my current workload. I will provide an estimated timeframe.</li>
+          <li class="mb-2">I accept payment in **USD through Paypal/Ko-fi** and **IDR through QRIS**.</li>
+          <li class="mb-2">**Full payment is due after settling on the sketch.** I will proceed with the commission after receiving payment.</li>
+          <li>Payment plans can be discussed upon request.</li>
         </ul>
+  
+         <h4 class="mt-4">Guidelines and Process:</h4>
+         <ul>
+           <li class="mb-2">I reserve the right to decline any commission request for any reason.</li>
+           <li class="mb-2">Please provide clear visual references and pose details to avoid misunderstandings. Quality over quantity; no pressure to make multiple offers.</li>
+           <li>Additional fees may apply for complex designs/prompts. This will be discussed and agreed upon before payment.</li>
+         </ul>
   
          <h4 class="mt-4">Revisions:</h4>
          <ul>
-           <li class="mb-2">[Number, e.g., 3] rounds of minor revisions are included during the sketch phase.</li>
-           <li class="mb-2">Major changes after the sketch is approved may incur additional fees.</li>
-           <li>No major changes are allowed after the line art or coloring phase begins.</li>
+           <li class="mb-2">Revisions are allowed during the sketching/lineart stage. **Up to 3 major revisions** are permitted post-agreement on the initial sketch.</li>
+           <li>Major revisions (e.g., significant pose or design alterations) cannot be accepted once the coloring/shading process begins.</li>
          </ul>
   
-         <h4 class="mt-4">Cancellation & Refunds:</h4>
+         <h4 class="mt-4">Cancellation:</h4>
          <ul>
-           <li class="mb-2">If I cancel the commission due to unforeseen circumstances, you will receive a full refund.</li>
-           <li class="mb-2">If you cancel the commission after work has started:
-             <ul>
-               <li class="mb-2">If only the sketch is complete, you will be refunded [Percentage, e.g., 50%].</li>
-               <li>If line art or coloring has begun, no refund will be issued.</li>
-             </ul>
-           </li>
-           <li>Chargebacks are not permitted. Any chargebacks will result in blacklisting and potential legal action.</li>
+           <li class="mb-2">If I have to cancel the commission due to unforeseen circumstances on my end, you will receive a full refund.</li>
+           <li>If you wish to cancel after work has begun, the refund amount will depend on the stage of completion (e.g., partial refund if only sketch is done, no refund if coloring has started). This will be handled on a case-by-case basis.</li>
          </ul>
   
-         <h4 class="mt-4">Copyright & Usage:</h4>
+         <h4 class="mt-4">Delivery and Completion:</h4>
          <ul>
-           <li class="mb-2">I retain all rights to the commissioned artwork, including the right to display it in my portfolio and social media.</li>
-           <li class="mb-2">The client is granted rights for **personal use only** unless a commercial license is agreed upon.</li>
-           <li class="mb-2">Personal use includes displaying the artwork on personal profiles, printing for personal use, etc.</li>
-           <li class="mb-2">**Do not edit, alter, or claim the artwork as your own.**</li>
-           <li>For commercial use inquiries (e.g., merchandise, publications, promotional material), please discuss this with me to arrange a commercial license fee.</li>
+           <li class="mb-2">Commissions will be delivered via **Discord, Email, or Google Drive** as requested by the client.</li>
+           <li>Completion time typically ranges between **1-2 months**, subject to workload variations. I will keep you updated on the progress.</li>
          </ul>
   
-         <p class="mt-4">By commissioning me, you agree to these Terms of Service.</p>
-         <p class="text-caption text-medium-emphasis">Last Updated: [Date]</p>
+         <p class="mt-6 font-weight-bold">
+           If you have read my TOS, please include "sakayume" when contacting me about a commission!
+         </p>
   
-         </v-card-text>
+         <p class="mt-4 text-caption text-medium-emphasis">Last Updated: [Insert Date Here]</p>
+  
+      </v-card-text>
     </v-card>
   </template>
   
@@ -56,8 +53,7 @@
   </script>
   
   <style scoped>
-  /* Add specific styles for TOS component if needed */
   ul {
-    padding-left: 20px; /* Add some padding to the left of list items */
+    padding-left: 20px;
   }
   </style>

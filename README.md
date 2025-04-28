@@ -1,93 +1,61 @@
-# Vite Vue Website
+# Silly Willy Sil's Portfolio Website
 
-A simple portfolio website built using **Vue 3**, **Vite**, and **Vuetify** with multiple pages and a working contact form powered by **EmailJS**.
+## About
 
-## ✨ Features
+This is a simple three-page static website serving as my online portfolio. It showcases my work, provides information about me, and details commission options.
 
-- ⚡ Fast development with Vite
-- 🎨 Material Design styling with Vuetify
-- 📄 Multiple pages: About, Portfolio, Commission
-- 📬 Email contact form using EmailJS
-- 🔗 Navigation bar and footer components
+## Technologies Used
 
-## 📁 Project Structure
+* **Vite:** A fast build tool for frontend development.
+* **Vue.js:** The progressive JavaScript framework used for building the user interface.
+* **Vuetify:** A complete UI framework for Vue.js, used for styling and components.
+* **EmailJS:** Used for handling the contact form submissions directly from the client side.
 
-```
-src/
-├── App.vue                # Root component
-├── main.js                # App entry point
-├── router/                # Vue Router config
-├── components/
-│   ├── Navbar.vue
-│   ├── Footer.vue
-│   └── ContactForm.vue
-├── pages/
-│   ├── About.vue
-│   ├── Portfolio.vue
-│   └── Commission.vue
-└── plugins/
-    └── vuetify.js         # Vuetify setup
-```
+## How to Run Locally
 
-## 🚀 Setup & Development
+Follow these steps to get the project running on your local machine:
 
-### 1. Install dependencies
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/secretceremony/sillywillysil
+    ```
 
-```bash
-npm install
-```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd sillywillysil
+    ```
 
-### 2. Run development server
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+    or if you use Yarn:
+    ```bash
+    yarn install
+    ```
 
-```bash
-npm run dev
-```
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    or if you use Yarn:
+    ```bash
+    yarn dev
+    ```
+    This will start a local development server, and you can view the website in your browser, usually at `http://localhost:5173` (or another port if 5173 is in use).
 
-### 3. Build for production
+## Contributions
 
-```bash
-npm run build
-```
+Feel free to fork this repository if you have suggestions or improvements. Pull requests are welcome!
 
-### 4. Preview production build
+1.  Fork the repository.
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
 
-```bash
-npm run preview
-```
+## License
 
-## 📦 Deployment
-
-You can deploy this project easily on platforms like:
-
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-- GitHub Pages (with a Vite config tweak)
-
-## 🔧 EmailJS Setup
-
-To make the contact form work:
-
-1. Sign up at [emailjs.com](https://www.emailjs.com)
-2. Create a **service**, **template**, and get your **public key**
-3. Replace the values in `ContactForm.vue`:
-   ```js
-   emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this.form, 'YOUR_PUBLIC_KEY')
-   ```
-
-> ✅ Tip: Use `.env` files to hide your keys in production.
-
-## 🧱 Built With
-
-- [Vue 3](https://vuejs.org/)
-- [Vite](https://vitejs.dev/)
-- [Vuetify 3](https://vuetifyjs.com/)
-- [EmailJS](https://www.emailjs.com/)
-
----
-
-## 📄 License
-
-MIT License © 2025 Your Name
-```
+This project is licensed under a basic license. You are free to use and adapt the code, provided you give appropriate credit.
 
 ---

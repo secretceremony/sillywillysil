@@ -33,6 +33,48 @@
       </v-container>
     </section>
 
+     <section class="bg-white py-10 py-md-16">
+        <v-container>
+            <h2 class="text-h4 font-weight-bold text-center mb-8">Will & Won't Draw</h2>
+            <v-row justify="center">
+                <v-col cols="12" md="6">
+                    <v-card elevation="2" class="fill-height">
+                       <v-card-title class="text-h6 font-weight-semibold text-success">
+                           <v-icon left color="success">mdi-check-circle-outline</v-icon>
+                           Will Draw
+                        </v-card-title>
+                        <v-card-text>
+                           <ul>
+                               <li class="mb-2">Humanoids / Anthro / Feral (Depending on commission type).</li>
+                               <li class="mb-2">Original Characters (OCs) and Franchise Characters.</li>
+                               <li class="mb-2">Complex Designs.</li>
+                               <li>OC x OC or OC x Canon pairings.</li>
+                           </ul>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                 <v-col cols="12" md="6">
+                    <v-card elevation="2" class="fill-height">
+                        <v-card-title class="text-h6 font-weight-semibold text-error">
+                            <v-icon left color="error">mdi-close-circle-outline</v-icon>
+                            Won't Draw
+                        </v-card-title>
+                        <v-card-text>
+                           <ul>
+                               <li class="mb-2">Mecha.</li>
+                               <li class="mb-2">AI designs/characters.</li>
+                               <li class="mb-2">NSFW (Fetish/Kink/etc).</li>
+                               <li class="mb-2">Gore (No extreme violence. Minor blood is okay).</li>
+                               <li>Art promoting hate, discrimination, or offensive content.</li>
+                           </ul>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+            </v-row>
+        </v-container>
+     </section>
+
+
     <section class="bg-white py-10 py-md-16">
       <v-container>
         <h2 class="text-h4 font-weight-bold text-center mb-8">Commission Types</h2>
@@ -202,7 +244,7 @@
             <p class="text-body-1 text-center text-medium-emphasis mb-6">
               If you're interested in commissioning me, please fill out the form below with details about your request.
               Make sure you've read the Terms of Service and Terms of Use above.
-              You can also contact me directly via [Your Preferred Contact Method/Platform, e.g., email@example.com].
+              You can also contact me directly via **[Your Preferred Contact Method/Platform, e.g., email@example.com]**.
             </p>
              <ContactForm />
           </v-col>
@@ -244,10 +286,10 @@ export default {
           image: 'https://via.placeholder.com/600x400/FF5733/FFFFFF?text=Bust+Example', // Placeholder image for card
           shortDescription: 'Shoulder-up character artwork.',
           details: {
-            fullDescription: 'Detailed illustration focusing on the head and shoulders of a character, with simple or transparent background.',
-            basePrice: '[Your Base Price, e.g., $50]',
-            includes: ['High-resolution digital file', 'Simple background', 'Up to 3 revisions during sketch phase'],
-            // Add more details here
+            fullDescription: 'Detailed illustration focusing on the head and shoulders of a character, with simple or transparent background. Perfect for profile pictures or icons.',
+            basePrice: 'Starts at [Your Base Price, e.g., $50 USD / Rp 750.000]',
+            includes: ['High-resolution digital file (PNG)', 'Simple or transparent background', 'Up to 3 revisions during sketch phase'],
+            // Add more details here like extra character cost, complex background cost, etc.
           }
         },
          {
@@ -256,9 +298,9 @@ export default {
           image: 'https://via.placeholder.com/600x400/33FF57/FFFFFF?text=Full+Body+Example', // Placeholder image for card
           shortDescription: 'Complete character illustration from head to toe.',
           details: {
-            fullDescription: 'Illustration of a character\'s full body, with optional simple background. Suitable for character references or illustrations.',
-            basePrice: '[Your Base Price, e.g., $100]',
-             includes: ['High-resolution digital file', 'Simple background', 'Up to 3 revisions during sketch phase'],
+            fullDescription: 'Illustration of a character\'s full body, with optional simple background. Suitable for character references, full illustrations, or design showcases.',
+            basePrice: 'Starts at [Your Base Price, e.g., $100 USD / Rp 1.500.000]',
+             includes: ['High-resolution digital file (PNG)', 'Simple or transparent background', 'Up to 3 revisions during sketch phase'],
             // Add more details here
           }
         },
@@ -268,28 +310,29 @@ export default {
           image: 'https://via.placeholder.com/600x400/3357FF/FFFFFF?text=Emote+Example', // Placeholder image for card
           shortDescription: 'Small, expressive icons for streaming or chat.',
           details: {
-            fullDescription: 'Set of small, stylized images perfect for Twitch, Discord, or other platforms. Price is usually per emote or per pack.',
-            basePrice: '[Your Base Price, e.g., $20 each / $80 for 5]',
-             includes: ['Small size digital files (e.g., 28x28, 56x56, 112x112 px)', 'Simple expression', 'Transparent background'],
+            fullDescription: 'Set of small, stylized images perfect for Twitch, Discord, or other platforms. Designed for clarity at small sizes. Price is usually per emote or per pack.',
+            basePrice: 'Starts at [Your Base Price, e.g., $20 USD each / Rp 300.000 each]',
+             includes: ['Digital files in multiple sizes (e.g., 28x28, 56x56, 112x112 px)', 'Simple expression', 'Transparent background'],
             // Add more details here
           }
         },
-        // Add more commission types here
+        // Add more commission types here following the same structure
+        // Example: Reference Sheet, Character Design, etc.
       ],
       galleryImages: {
         'Bust Illustration': [
-          { id: 101, image: 'https://via.placeholder.com/800x800/FF5733/CCCCCC?text=Bust+Gallery+1', title: 'Bust Example 1', description: 'A sample bust commission.' },
-          { id: 102, image: 'https://via.placeholder.com/800x800/FF5733/AAAAAA?text=Bust+Gallery+2', title: 'Bust Example 2', description: 'Another example of a bust.' },
+          { id: 101, image: 'https://via.placeholder.com/800x800/FF5733/CCCCCC?text=Bust+Gallery+1', title: 'Bust Example 1', description: 'A sample bust commission showing X.' },
+          { id: 102, image: 'https://via.placeholder.com/800x800/FF5733/AAAAAA?text=Bust+Gallery+2', title: 'Bust Example 2', description: 'Another example of a bust with Y style.' },
            // Add more bust examples
         ],
         'Full Body Artwork': [
-           { id: 201, image: 'https://via.placeholder.com/800x800/33FF57/CCCCCC?text=Full+Body+Gallery+1', title: 'Full Body Example 1', description: 'Sample full body artwork.' },
-           { id: 202, image: 'https://via.placeholder.com/800x800/33FF57/AAAAAA?text=Full+Body+Gallery+2', title: 'Full Body Example 2', description: 'Another full body piece.' },
+           { id: 201, image: 'https://via.placeholder.com/800x800/33FF57/CCCCCC?text=Full+Body+Gallery+1', title: 'Full Body Example 1', description: 'Sample full body artwork with Z background.' },
+           { id: 202, image: 'https://via.placeholder.com/800x800/33FF57/AAAAAA?text=Full+Body+Gallery+2', title: 'Full Body Example 2', description: 'Another full body piece demonstrating W pose.' },
           // Add more full body examples
         ],
          'Emotes/Icons': [
-           { id: 301, image: 'https://via.placeholder.com/800x800/3357FF/CCCCCC?text=Emote+Gallery+1', title: 'Emote Example 1', description: 'An example emote.' },
-           { id: 302, image: 'https://via.placeholder.com/800x800/3357FF/AAAAAA?text=Emote+Gallery+2', title: 'Emote Example 2', description: 'Another emote example.' },
+           { id: 301, image: 'https://via.placeholder.com/800x800/3357FF/CCCCCC?text=Emote+Gallery+1', title: 'Emote Example 1', description: 'An example emote: happy.' },
+           { id: 302, image: 'https://via.placeholder.com/800x800/3357FF/AAAAAA?text=Emote+Gallery+2', title: 'Emote Example 2', description: 'Another emote example: sad.' },
           // Add more emote examples
         ],
         // Add galleries for other commission types, make sure keys match commissionTypesOverview titles
@@ -342,5 +385,10 @@ export default {
 .v-card .v-card-title,
 .v-card .v-card-subtitle {
     padding-bottom: 8px; /* Reduce default padding below title/subtitle */
+}
+
+/* Style for Will/Won't Draw lists */
+.v-card-text ul {
+    list-style: disc;
 }
 </style>
