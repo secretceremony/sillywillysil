@@ -1,6 +1,7 @@
 <template>
   <div>
-    <section class="bg-primary text-white text-center">
+    <!-- Changed background color -->
+    <section style="background-color: #8C90E7;" class="text-white text-center">
       <v-container class="py-10 py-md-16">
         <v-row align="center" justify="center">
           <v-col cols="12" md="6">
@@ -22,7 +23,8 @@
       </v-container>
     </section>
 
-    <section class="bg-surface py-10 py-md-16">
+    <!-- Changed background color -->
+    <section style="background-color: #E9BFE3;" class="py-10 py-md-16 dark-text">
       <v-container>
         <v-row align="start" justify="center">
           <v-col cols="12" md="6">
@@ -94,7 +96,8 @@
       </v-container>
     </section>
 
-    <section class="bg-primary text-white py-10 py-md-16">
+    <!-- Changed background color -->
+    <section style="background-color: #8C90E7;" class="text-white py-10 py-md-16">
       <v-container>
         <h2 class="text-h4 font-weight-bold text-center mb-6">Zine Contributions</h2>
 
@@ -107,11 +110,13 @@
                 </v-col>
                 <v-col cols="12" sm="8">
                   <div class="font-weight-bold text-subtitle-1 mb-1">
+                    <!-- Keep text-white class for links -->
                     <a href="https://heyzine.com/flip-book/b6986b2e30.html" target="_blank" class="text-decoration-none text-white">
                       VOID SPACE ZINE PROJECT
                     </a> | Project Manager
                   </div>
-                  <p class="text-body-2 text-medium-emphasis text-white">
+                  <!-- Text color controlled by parent text-white -->
+                  <p class="text-body-2 text-medium-emphasis">
                     A zine project that focuses on the daily life of void space. I was responsible for managing the project and coordinating with artists.
                   </p>
                 </v-col>
@@ -127,11 +132,13 @@
                 </v-col>
                 <v-col cols="12" sm="8">
                   <div class="font-weight-bold text-subtitle-1 mb-1">
+                    <!-- Keep text-white class for links -->
                     <a href="https://x.com/witchoftimezine" target="_blank" class="text-decoration-none text-white">
                       WITCH OF TIME ZINE
                     </a> | Artist
                   </div>
-                  <p class="text-body-2 text-medium-emphasis text-white">
+                   <!-- Text color controlled by parent text-white -->
+                  <p class="text-body-2 text-medium-emphasis">
                     A zine project that focuses on Damara Megido and The Handmaid. I contributed as an artist and created a piece for the zine.
                   </p>
                 </v-col>
@@ -147,12 +154,12 @@
                 </v-col>
                 <v-col cols="12" sm="8">
                   <div class="font-weight-bold text-subtitle-1 mb-1">
-                    <a href="https://x.com/VOL10_FANZINE" target="_blank" class="text-decoration-none text-white">
-                      Homestuck Vol.10 Fan Zine
-                    </a> | Artist
+                    <!-- Keep text-white class for links (although this one has no link) -->
+                    Bloodswap Zine | Artist
                   </div>
-                  <p class="text-body-2 text-medium-emphasis text-white">
-                    A zine project based on the Homestuck Vol.10 OST. I created two pieces inspired by "Creata" and "Thank You For Playing!".
+                   <!-- Text color controlled by parent text-white -->
+                  <p class="text-body-2 text-medium-emphasis">
+                    A zine project focusing on bloodswap in Homestuck. I contributed as an artist and created a piece for the zine.
                   </p>
                 </v-col>
               </v-row>
@@ -167,10 +174,12 @@
                 </v-col>
                 <v-col cols="12" sm="8">
                   <div class="font-weight-bold text-subtitle-1 mb-1">
-                    Bloodswap Zine | Artist
+                     <!-- Keep text-white class for links (although this one has no link) -->
+                    Homestuck Vol.10 Fan Zine | Artist
                   </div>
-                  <p class="text-body-2 text-medium-emphasis text-white">
-                    A zine project focusing on bloodswap in Homestuck. I contributed as an artist and created a piece for the zine.
+                   <!-- Text color controlled by parent text-white -->
+                  <p class="text-body-2 text-medium-emphasis">
+                    A zine project based on the Homestuck Vol.10 OST. I created two pieces inspired by "Creata" and "Thank You For Playing!".
                   </p>
                 </v-col>
               </v-row>
@@ -180,16 +189,18 @@
       </v-container>
     </section>
 
+    <!-- Keep background color as white, updated icon colors -->
     <section class="bg-white py-10 py-md-16">
       <v-container>
-        <h2 class="text-h4 font-weight-bold text-center mb-8">Interests</h2>
+        <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">Interests</h2>
 
         <v-row justify="center">
           <v-col cols="12" sm="6" md="4">
             <v-card elevation="2" class="pa-4">
               <v-card-text class="text-center">
-                <v-icon size="48" color="primary" class="mb-4">mdi-palette</v-icon>
-                <h3 class="text-h6 font-weight-semibold mb-2">Digital Art</h3>
+                <!-- Changed icon color -->
+                <v-icon size="48" color="#8C90E7" class="mb-4">mdi-palette</v-icon>
+                <h3 class="text-h6 font-weight-semibold mb-2 dark-text">Digital Art</h3>
                 <p class="text-body-2 text-medium-emphasis">
                   Character design, illustration, concept art.
                 </p>
@@ -200,8 +211,9 @@
           <v-col cols="12" sm="6" md="4">
             <v-card elevation="2" class="pa-4">
               <v-card-text class="text-center">
-                <v-icon size="48" color="primary" class="mb-4">mdi-monitor-cellphone</v-icon>
-                <h3 class="text-h6 font-weight-semibold mb-2">UI/UX Design</h3>
+                <!-- Changed icon color -->
+                <v-icon size="48" color="#8C90E7" class="mb-4">mdi-monitor-cellphone</v-icon>
+                <h3 class="text-h6 font-weight-semibold mb-2 dark-text">UI/UX Design</h3>
                 <p class="text-body-2 text-medium-emphasis">
                   Exploring user interfaces and user experience.
                 </p>
@@ -212,8 +224,9 @@
           <v-col cols="12" sm="6" md="4">
             <v-card elevation="2" class="pa-4">
               <v-card-text class="text-center">
-                <v-icon size="48" color="primary" class="mb-4">mdi-code-tags</v-icon>
-                <h3 class="text-h6 font-weight-semibold mb-2">Web Development</h3>
+                 <!-- Changed icon color -->
+                <v-icon size="48" color="#8C90E7" class="mb-4">mdi-code-tags</v-icon>
+                <h3 class="text-h6 font-weight-semibold mb-2 dark-text">Web Development</h3>
                 <p class="text-body-2 text-medium-emphasis">
                   Learning new technologies.
                 </p>
@@ -224,8 +237,10 @@
       </v-container>
     </section>
 
-    <section class="bg-surface py-10 py-md-16">
+    <!-- Changed background color -->
+    <section style="background-color: #E9BFE3;" class="py-10 py-md-16">
       <v-container>
+        <!-- Assuming ContactForm component handles its own internal colors/styles -->
         <ContactForm />
       </v-container>
     </section>
@@ -244,3 +259,9 @@ export default {
   // methods: {},
 };
 </script>
+
+<style scoped>
+.dark-text {
+  color: #23254d;
+}
+</style>

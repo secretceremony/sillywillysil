@@ -1,83 +1,77 @@
 <template>
   <div>
-    <section class="bg-primary text-white text-center py-10 py-md-16">
+    <section style="background-color: #8C90E7;" class="text-white text-center py-10 py-md-16">
       <v-container>
         <h1 class="text-h3 text-md-h2 font-weight-bold mb-4">Commissions</h1>
         <p class="text-subtitle-1">Interested in commissioning a piece from me? Find information about my services here.</p>
       </v-container>
     </section>
 
-    <section class="bg-surface py-10 py-md-16">
+    <section style="background-color: #E9BFE3;" class="py-10 py-md-16 dark-text">
       <v-container>
-         <h2 class="text-h4 font-weight-bold text-center mb-8">Terms</h2>
-         <v-card elevation="2">
-            <v-tabs
-              v-model="activeTermTab"
-              align-tabs="center"
-              color="primary"
-              grow
-            >
-              <v-tab value="tos">Terms of Service (TOS)</v-tab>
-              <v-tab value="tou">Terms of Use (TOU)</v-tab>
-            </v-tabs>
+           <h2 class="text-h4 font-weight-bold text-center mb-8">Terms</h2>
+           <v-card elevation="2"> <v-tabs
+               v-model="activeTermTab"
+               align-tabs="center"
+               color="#8C90E7" grow
+             >
+               <v-tab value="tos">Terms of Service (TOS)</v-tab>
+               <v-tab value="tou">Terms of Use (TOU)</v-tab>
+             </v-tabs>
 
-            <v-window v-model="activeTermTab">
-               <v-window-item value="tos">
-                 <TOS />
-               </v-window-item>
-               <v-window-item value="tou">
-                 <TOU />
-               </v-window-item>
-            </v-window>
-         </v-card>
+             <v-window v-model="activeTermTab">
+                <v-window-item value="tos">
+                  <TOS />
+                </v-window-item>
+                <v-window-item value="tou">
+                   <TOU />
+                </v-window-item>
+             </v-window>
+           </v-card>
       </v-container>
     </section>
 
-     <section class="bg-white py-10 py-md-16">
-        <v-container>
-            <h2 class="text-h4 font-weight-bold text-center mb-8">Will & Won't Draw</h2>
-            <v-row justify="center">
-                <v-col cols="12" md="6">
-                    <v-card elevation="2" class="fill-height">
-                       <v-card-title class="text-h6 font-weight-semibold text-success">
-                           <v-icon left color="success">mdi-check-circle-outline</v-icon>
-                           Will Draw
-                        </v-card-title>
-                        <v-card-text>
-                           <ul>
-                               <li class="mb-2">Humanoids / Anthro / Feral (Depending on commission type).</li>
-                               <li class="mb-2">Original Characters (OCs) and Franchise Characters.</li>
-                               <li class="mb-2">Complex Designs.</li>
-                               <li>OC x OC or OC x Canon pairings.</li>
-                           </ul>
-                        </v-card-text>
-                    </v-card>
-                </v-col>
+      <section class="bg-white py-10 py-md-16">
+         <v-container>
+             <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">Will & Won't Draw</h2>
+             <v-row justify="center">
                  <v-col cols="12" md="6">
-                    <v-card elevation="2" class="fill-height">
-                        <v-card-title class="text-h6 font-weight-semibold text-error">
-                            <v-icon left color="error">mdi-close-circle-outline</v-icon>
-                            Won't Draw
-                        </v-card-title>
-                        <v-card-text>
-                           <ul>
-                               <li class="mb-2">Mecha.</li>
-                               <li class="mb-2">AI designs/characters.</li>
-                               <li class="mb-2">NSFW (Fetish/Kink/etc).</li>
-                               <li class="mb-2">Gore (No extreme violence. Minor blood is okay).</li>
-                               <li>Art promoting hate, discrimination, or offensive content.</li>
-                           </ul>
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-            </v-row>
-        </v-container>
-     </section>
+                     <v-card elevation="2" class="fill-height"> <v-card-title class="text-h6 font-weight-semibold" style="color: #BAA7E6;">
+                             <v-icon left color="#BAA7E6">mdi-check-circle-outline</v-icon>
+                             Will Draw
+                         </v-card-title>
+                          <v-card-text> <ul class="dark-text">
+                                 <li class="mb-2">Humanoids / Anthro / Feral (Depending on commission type).</li>
+                                 <li class="mb-2">Original Characters (OCs) and Franchise Characters.</li>
+                                 <li class="mb-2">Complex Designs.</li>
+                                 <li>OC x OC or OC x Canon pairings.</li>
+                             </ul>
+                          </v-card-text>
+                     </v-card>
+                 </v-col>
+                   <v-col cols="12" md="6">
+                      <v-card elevation="2" class="fill-height"> <v-card-title class="text-h6 font-weight-semibold" style="color: #ECC9dc;">
+                              <v-icon left color="#ECC9dc">mdi-close-circle-outline</v-icon>
+                              Won't Draw
+                          </v-card-title>
+                          <v-card-text> <ul class="dark-text">
+                                 <li class="mb-2">Mecha.</li>
+                                 <li class="mb-2">AI designs/characters.</li>
+                                 <li class="mb-2">NSFW (Fetish/Kink/etc).</li>
+                                 <li class="mb-2">Gore (No extreme violence. Minor blood is okay).</li>
+                                 <li>Art promoting hate, discrimination, or offensive content.</li>
+                             </ul>
+                          </v-card-text>
+                      </v-card>
+                   </v-col>
+             </v-row>
+         </v-container>
+      </section>
 
 
     <section class="bg-white py-10 py-md-16">
       <v-container>
-        <h2 class="text-h4 font-weight-bold text-center mb-8">Commission Types</h2>
+        <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">Commission Types</h2>
 
         <v-row justify="center">
           <v-col
@@ -89,22 +83,19 @@
           >
             <v-card
               elevation="2"
-              class="fill-height d-flex flex-column cursor-pointer"
+              class="fill-height d-flex flex-column cursor-pointer dark-text"
               @click="openTypeDetailsDialog(type)"
-            >
-               <v-img
+            > <v-img
                   v-if="type.image"
                   :src="type.image"
                   :alt="type.title"
                   aspect-ratio="1.5"
                   cover
                ></v-img>
-              <v-card-title>{{ type.title }}</v-card-title>
-              <v-card-text class="flex-grow-1">
-                 <p>{{ type.shortDescription }}</p>
+              <v-card-title>{{ type.title }}</v-card-title> <v-card-text class="flex-grow-1"> <p>{{ type.shortDescription }}</p>
               </v-card-text>
               <v-card-actions>
-                 <v-btn text color="primary">Learn More</v-btn>
+                <v-btn text color="#8C90E7">Learn More</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -115,79 +106,63 @@
     <v-dialog
       v-model="typeDetailsDialogOpen"
       max-width="600"
-    >
-      <v-card>
-        <v-card-title class="d-flex justify-space-between align-center">
-          <span>{{ selectedCommissionTypeDetails ? selectedCommissionTypeDetails.title : 'Commission Details' }}</span>
+    > <v-card> <v-card-title class="d-flex justify-space-between align-center dark-text"> <span>{{ selectedCommissionTypeDetails ? selectedCommissionTypeDetails.title : 'Commission Details' }}</span>
           <v-btn icon @click="closeTypeDetailsDialog">
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-card-title>
-        <v-card-text v-if="selectedCommissionTypeDetails">
+        <v-card-text v-if="selectedCommissionTypeDetails" class="dark-text">
           <v-img
-             v-if="selectedCommissionTypeDetails.image"
-             :src="selectedCommissionTypeDetails.image"
-             :alt="selectedCommissionTypeDetails.title"
-             aspect-ratio="1.5"
-             contain
-             class="mb-4"
+               v-if="selectedCommissionTypeDetails.image"
+               :src="selectedCommissionTypeDetails.image"
+               :alt="selectedCommissionTypeDetails.title"
+               aspect-ratio="1.5"
+               contain
+               class="mb-4"
           ></v-img>
-          <p class="text-body-1 font-weight-semibold mb-2">Description:</p>
-          <p class="text-body-2 text-medium-emphasis">{{ selectedCommissionTypeDetails.details.fullDescription }}</p>
-
-          <p class="text-body-1 font-weight-semibold mt-4 mb-2">Starting Price:</p>
-          <p class="text-body-2 text-medium-emphasis">{{ selectedCommissionTypeDetails.details.basePrice }}</p>
-
-           <p class="text-body-1 font-weight-semibold mt-4 mb-2">What's Included:</p>
-           <ul class="text-body-2 text-medium-emphasis">
-             <li v-for="(item, i) in selectedCommissionTypeDetails.details.includes" :key="i">{{ item }}</li>
-           </ul>
+          <p class="text-body-1 font-weight-semibold mb-2">Description:</p> <p class="text-body-2 text-medium-emphasis">{{ selectedCommissionTypeDetails.details.fullDescription }}</p> <p class="text-body-1 font-weight-semibold mt-4 mb-2">Starting Price:</p> <p class="text-body-2 text-medium-emphasis">{{ selectedCommissionTypeDetails.details.basePrice }}</p> <p class="text-body-1 font-weight-semibold mt-4 mb-2">What's Included:</p> <ul class="text-body-2 text-medium-emphasis"> <li v-for="(item, i) in selectedCommissionTypeDetails.details.includes" :key="i">{{ item }}</li>
+            </ul>
 
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="closeTypeDetailsDialog">Close</v-btn>
+          <v-btn color="#8C90E7" text @click="closeTypeDetailsDialog">Close</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
 
 
-    <section class="bg-surface py-10 py-md-16">
+    <section style="background-color: #E9BFE3;" class="py-10 py-md-16 dark-text">
       <v-container>
         <h2 class="text-h4 font-weight-bold text-center mb-8">Commission Examples</h2>
-
-        <v-card elevation="2">
-           <v-tabs
-            v-model="activeGalleryTab"
-            align-tabs="center"
-            color="primary"
-            grow
-          >
-             <v-tab
+        <v-card elevation="2"> <v-tabs
+             v-model="activeGalleryTab"
+             align-tabs="center"
+             color="#8C90E7" grow
+           >
+              <v-tab
               v-for="(images, type) in galleryImages"
               :key="type"
               :value="type"
             >
-              {{ type }}
-            </v-tab>
-          </v-tabs>
+              {{ type }} </v-tab>
+           </v-tabs>
 
-          <v-window v-model="activeGalleryTab">
-             <v-window-item
-              v-for="(images, type) in galleryImages"
-              :key="type"
-              :value="type"
-            >
-               <v-card flat>
-                  <v-card-text>
-                     <v-row v-if="images && images.length > 0">
-                       <v-col
+            <v-window v-model="activeGalleryTab">
+               <v-window-item
+                v-for="(images, type) in galleryImages"
+                :key="type"
+                :value="type"
+               >
+                <v-card flat> <v-card-text>
+                      <v-row v-if="images && images.length > 0">
+                        <v-col
                           v-for="image in images"
                           :key="image.id"
                           cols="6"
                           sm="4"
                           md="3"
-                       >
+                        >
                           <v-img
                              :src="image.image"
                              :alt="image.title"
@@ -195,66 +170,58 @@
                              cover
                              class="cursor-pointer"
                              @click="openGalleryImageDialog(image)"
-                          ></v-img>
-                       </v-col>
-                     </v-row>
-                     <p v-else class="text-center text-medium-emphasis py-8">No examples available for this type yet.</p>
-                  </v-card-text>
-               </v-card>
-            </v-window-item>
-          </v-window>
-        </v-card>
+                           ></v-img>
+                        </v-col>
+                      </v-row>
+                       <p v-else class="text-center text-medium-emphasis py-8">No examples available for this type yet.</p> </v-card-text>
+                   </v-card>
+                 </v-window-item>
+            </v-window>
+          </v-card>
       </v-container>
     </section>
 
-     <v-dialog
-       v-model="galleryImageDialogOpen"
-       max-width="800"
-     >
-       <v-card>
-         <v-card-title class="d-flex justify-space-between align-center">
-           <span>{{ selectedGalleryImage ? selectedGalleryImage.title : 'Example Preview' }}</span>
-           <v-btn icon @click="closeGalleryImageDialog">
-             <v-icon>mdi-close</v-icon>
-           </v-btn>
-         </v-card-title>
-         <v-card-text class="pa-0">
-           <v-img
-             v-if="selectedGalleryImage"
-             :src="selectedGalleryImage.image"
-             :alt="selectedGalleryImage.title"
-             contain
-             width="100%"
-           ></v-img>
-         </v-card-text>
-          <v-card-actions v-if="selectedGalleryImage && selectedGalleryImage.description">
-            <v-card-text class="text-body-2 text-medium-emphasis">
-              {{ selectedGalleryImage.description }}
-            </v-card-text>
-         </v-card-actions>
-       </v-card>
-     </v-dialog>
+      <v-dialog
+        v-model="galleryImageDialogOpen"
+        max-width="800"
+      > <v-card> <v-card-title class="d-flex justify-space-between align-center"> <span>{{ selectedGalleryImage ? selectedGalleryImage.title : 'Example Preview' }}</span>
+             <v-btn icon @click="closeGalleryImageDialog">
+                <v-icon>mdi-close</v-icon>
+             </v-btn>
+          </v-card-title>
+          <v-card-text class="pa-0">
+             <v-img
+                v-if="selectedGalleryImage"
+                :src="selectedGalleryImage.image"
+                :alt="selectedGalleryImage.title"
+                contain
+                width="100%"
+             ></v-img>
+          </v-card-text>
+           <v-card-actions v-if="selectedGalleryImage && selectedGalleryImage.description">
+             <v-card-text class="text-body-2 text-medium-emphasis"> {{ selectedGalleryImage.description }}
+             </v-card-text>
+           </v-card-actions>
+         </v-card>
+       </v-dialog>
 
 
     <section class="bg-white py-10 py-md-16">
       <v-container>
-        <h2 class="text-h4 font-weight-bold text-center mb-8">How to Order</h2>
-        <v-row justify="center">
+        <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">How to Order</h2> <v-row justify="center">
           <v-col cols="12" md="8">
-            <p class="text-body-1 text-center text-medium-emphasis mb-6">
-              If you're interested in commissioning me, please fill out the form below with details about your request.
+            <p class="text-body-1 text-center text-medium-emphasis mb-6"> If you're interested in commissioning me, please fill out the form below with details about your request.
               Make sure you've read the Terms of Service and Terms of Use above.
               You can also contact me directly via **[Your Preferred Contact Method/Platform, e.g., email@example.com]**.
             </p>
-             <ContactForm />
-          </v-col>
+              <ContactForm />
+           </v-col>
         </v-row>
       </v-container>
     </section>
 
-     <section class="text-center py-10">
-        <v-btn color="primary" to="/">Back to About Me</v-btn>
-     </section>
+      <section class="text-center py-10 dark-text" style="background-color: #ffffff;"> <v-btn color="#8C90E7" to="/">Back to About Me</v-btn>
+      </section>
 
   </div>
 </template>
@@ -292,7 +259,7 @@ export default {
             // Add more details here like extra character cost, complex background cost, etc.
           }
         },
-         {
+          {
           id: 2,
           title: 'Full Body Artwork',
           image: 'https://via.placeholder.com/600x400/33FF57/FFFFFF?text=Full+Body+Example', // Placeholder image for card
@@ -304,7 +271,7 @@ export default {
             // Add more details here
           }
         },
-         {
+          {
           id: 3,
           title: 'Emotes/Icons',
           image: 'https://via.placeholder.com/600x400/3357FF/FFFFFF?text=Emote+Example', // Placeholder image for card
@@ -356,6 +323,7 @@ export default {
     },
     closeTypeDetailsDialog() {
       this.typeDetailsDialogOpen = false;
+      // Corrected syntax here: use 'this.selectedCommissionTypeDetails = null;'
       this.selectedCommissionTypeDetails = null;
     },
     openGalleryImageDialog(image) {
@@ -376,6 +344,11 @@ export default {
   cursor: pointer;
 }
 
+/* Apply the chosen dark color from the palette to text elements in sections with light backgrounds */
+.dark-text {
+    color: #23254d; /* Use the requested very dark purple */
+}
+
 /* Adjust card text padding for cards with images */
 .v-card .v-card-text {
     padding-top: 0 !important;
@@ -390,5 +363,11 @@ export default {
 /* Style for Will/Won't Draw lists */
 .v-card-text ul {
     list-style: disc;
+    padding-left: 20px; /* Add some padding for the list bullets */
+}
+
+/* Adjust padding for list items if needed */
+.v-card-text ul li {
+  margin-bottom: 8px; /* Add space between list items */
 }
 </style>

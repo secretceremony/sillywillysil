@@ -1,6 +1,7 @@
 <template>
   <div>
-    <section class="bg-primary text-white text-center py-10 py-md-16">
+    <!-- Changed background color from bg-primary to hex code -->
+    <section style="background-color: #8C90E7;" class="text-white text-center py-10 py-md-16">
       <v-container>
         <h1 class="text-h3 text-md-h2 font-weight-bold mb-4">My Portfolio</h1>
         <p class="text-subtitle-1">A showcase of my digital art contributions and best pieces over the years.</p>
@@ -9,7 +10,7 @@
 
     <section class="bg-white py-10 py-md-16">
       <v-container>
-        <h2 class="text-h4 font-weight-bold text-center mb-8">Zine Contributions Art</h2>
+        <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">Zine Contributions Art</h2>
 
         <v-row justify="center">
           <v-col
@@ -18,7 +19,7 @@
             cols="12"
             md="10"
           >
-            <v-card elevation="2" class="mb-8">
+            <v-card elevation="2" class="mb-8 dark-text"> <!-- Card background is default white -->
               <v-row no-gutters>
                 <v-col cols="12" md="6">
                   <v-img
@@ -31,7 +32,7 @@
                   ></v-img>
                 </v-col>
                 <v-col cols="12" md="6">
-                  <v-card-title>{{ item.title }}</v-card-title>
+                  <v-card-title class="dark-text">{{ item.title }}</v-card-title>
                   <v-card-subtitle v-if="item.zine">From: {{ item.zine }}</v-card-subtitle>
                   <v-card-text>
                     <p>{{ item.description }}</p>
@@ -44,15 +45,15 @@
       </v-container>
     </section>
 
-    <section class="bg-surface py-10 py-md-16">
+    <section style="background-color: #E9BFE3;" class="py-10 py-md-16">
       <v-container>
-        <h2 class="text-h4 font-weight-bold text-center mb-8">Best Artwork by Year</h2>
+        <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">Best Artwork by Year</h2>
 
         <v-card elevation="2">
           <v-tabs
             v-model="activeYearTab"
             align-tabs="center"
-            color="primary"
+            color="#8C90E7"
             grow
           >
             <v-tab
@@ -89,15 +90,16 @@
                       class="cursor-pointer"
                       @click="openDialog(artwork)"
                     >
-                       <div class="d-flex fill-height justify-center align-end pa-3 text-white" style="background: rgba(0, 0, 0, 0.3);">
-                         <div class="text-center">
-                            <h3 class="text-h6 font-weight-bold mb-1">{{ artwork.title }}</h3>
-                            <p class="text-body-2">{{ artwork.description }}</p>
-                         </div>
-                       </div>
+
+                        <div class="d-flex fill-height justify-center align-end pa-3 text-white" style="background: rgba(0, 0, 0, 0.3);">
+                           <div class="text-center">
+                             <h3 class="text-h6 font-weight-bold mb-1">{{ artwork.title }}</h3>
+                             <p class="text-body-2">{{ artwork.description }}</p>
+                           </div>
+                        </div>
                     </v-carousel-item>
                   </v-carousel>
-                   <p v-else class="text-center text-medium-emphasis py-8">No artwork available for {{ year }} yet.</p>
+                    <p v-else class="text-center text-medium-emphasis py-8">No artwork available for {{ year }} yet.</p> <!-- Inherits .dark-text with opacity -->
                 </v-card-text>
               </v-card>
             </v-window-item>
@@ -111,32 +113,34 @@
        max-width="800"
      >
        <v-card>
-         <v-card-title class="d-flex justify-space-between align-center">
-           <span>{{ selectedImage ? selectedImage.title : 'Image Preview' }}</span>
-           <v-btn icon @click="closeDialog">
-             <v-icon>mdi-close</v-icon>
-           </v-btn>
-         </v-card-title>
-         <v-card-text class="pa-0">
-           <v-img
-             v-if="selectedImage"
-             :src="selectedImage.image"
-             :alt="selectedImage.title"
-             contain
-             width="100%"
-           ></v-img>
-         </v-card-text>
-         <v-card-actions v-if="selectedImage && selectedImage.description">
-            <v-card-text class="text-body-2 text-medium-emphasis">
-              {{ selectedImage.description }}
-            </v-card-text>
-         </v-card-actions>
-       </v-card>
-     </v-dialog>
+          <v-card-title class="d-flex justify-space-between align-center dark-text">
+             <span>{{ selectedImage ? selectedImage.title : 'Image Preview' }}</span>
+             <v-btn icon @click="closeDialog">
+               <v-icon color="dark-text">mdi-close</v-icon>
+             </v-btn>
+          </v-card-title>
+          <v-card-text class="pa-0">
+             <v-img
+                v-if="selectedImage"
+                :src="selectedImage.image"
+                :alt="selectedImage.title"
+                contain
+                width="100%"
+             ></v-img>
+          </v-card-text>
+           <v-card-actions v-if="selectedImage && selectedImage.description">
+             <v-card-text class="text-body-2 text-medium-emphasis"> <!-- Text is default dark/black with opacity -->
+                {{ selectedImage.description }}
+             </v-card-text>
+           </v-card-actions>
+         </v-card>
+       </v-dialog>
 
-     <section class="text-center py-10">
-        <v-btn color="primary" to="/">Back to About Me</v-btn>
-     </section>
+      <!-- Background color white, Added dark-text class for text color -->
+      <section class="text-center py-10 dark-text" style="background-color: #ffffff;"> <!-- Explicitly setting background to white -->
+         <!-- Button color changed from primary to hex code -->
+         <v-btn color="#8C90E7" to="/">Back to About Me</v-btn>
+      </section>
 
   </div>
 </template>
@@ -164,7 +168,7 @@ export default {
           description: 'My contribution to the Witch of Time Zine, depicting the character in a moment of contemplation. I aimed for a moody atmosphere using strong shadows and highlights.',
           zine: 'WITCH OF TIME ZINE'
         },
-         {
+          {
           id: 3,
           title: 'Homestuck Vol.10 Zine Piece',
           image: 'https://via.placeholder.com/1200x900/00FF00/000000?text=HS+Zine+Art+3', // Increased size for modal preview
@@ -204,11 +208,11 @@ export default {
   computed: {
     // Sorts the years in descending order for tabs
     sortedYears() {
-       // Get all years, filter out any with no data if preferred, but the prompt
-       // asks for 2020-2025, so we'll include all those keys if they exist.
-       const years = Object.keys(this.yearlyArtwork);
-       // You could filter like this if you only want tabs for years with content:
-       // .filter(year => this.yearlyArtwork[year] && this.yearlyArtwork[year].length > 0)
+        // Get all years, filter out any with no data if preferred, but the prompt
+        // asks for 2020-2025, so we'll include all those keys if they exist.
+        const years = Object.keys(this.yearlyArtwork);
+        // You could filter like this if you only want tabs for years with content:
+        // .filter(year => this.yearlyArtwork[year] && this.yearlyArtwork[year].length > 0)
 
       return years.sort((a, b) => b - a);
     }
@@ -240,5 +244,36 @@ export default {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+/* Apply the chosen dark color (#23254d) to text elements in sections with light backgrounds */
+.dark-text {
+    color: #23254d; /* Use the requested very dark purple */
+}
+
+/* Adjust card text padding for cards with images */
+.v-card .v-card-text {
+    padding-top: 0 !important;
+}
+
+/* Adjustments for v-img within cards if title/subtitle padding is affecting it */
+.v-card .v-card-title,
+.v-card .v-card-subtitle {
+    padding-bottom: 8px; /* Reduce default padding below title/subtitle */
+}
+
+/* Style for Will/Won't Draw lists */
+.v-card-text ul {
+    list-style: disc;
+    padding-left: 20px; /* Add some padding for the list bullets */
+}
+
+/* Adjust padding for list items if needed */
+.v-card-text ul li {
+  margin-bottom: 8px; /* Add space between list items */
+}
+
+.dark-text {
+  color: #23254d;
 }
 </style>
