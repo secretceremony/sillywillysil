@@ -69,9 +69,9 @@
       </section>
 
 
-    <section class="bg-white py-10 py-md-16 dark-text">
+    <section class="bg-white py-10 py-md-16">
       <v-container>
-        <h2 class="text-h4 font-weight-bold text-center mb-8">Commission Types</h2>
+        <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">Commission Types</h2>
 
         <v-row justify="center">
           <v-col
@@ -92,7 +92,7 @@
                   aspect-ratio="1.5"
                   cover
                ></v-img>
-              <v-card-title>{{ type.title }}</v-card-title> <v-card-text class="flex-grow-1"> <p>{{ type.shortDescription }}</p>
+              <v-card-title class="dark-text">{{ type.title }}</v-card-title> <v-card-text class="flex-grow-1 dark-text"> <p>{{ type.shortDescription }}</p>
               </v-card-text>
               <v-card-actions>
                 <v-btn text color="#8C90E7">Learn More</v-btn>
@@ -209,9 +209,9 @@
        </v-dialog>
 
 
-    <section class="bg-white py-10 py-md-16 dark-text">
+    <section class="bg-white py-10 py-md-16">
       <v-container>
-        <h2 class="text-h4 font-weight-bold text-center mb-8">How to Order</h2> <v-row justify="center">
+        <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">How to Order</h2> <v-row justify="center">
           <v-col cols="12" md="8">
             <p class="text-body-1 text-center text-medium-emphasis mb-6"> If you're interested in commissioning me, please fill out the form below with details about your request.
               Make sure you've read the Terms of Service and Terms of Use above.
@@ -254,10 +254,10 @@ export default {
           id: 1, // Re-indexed ID
           title: 'Mini Icon',
           image: 'https://f2.toyhou.se/file/f2-toyhou-se/characters/28423233?1725495158', // Placeholder image (replace with actual)
-          shortDescription: 'Small, square icon artwork (500x500px).',
+          shortDescription: 'Small chibi icon commission.',
           details: {
             fullDescription: 'I am offering Mini Icon art of any character you desire! The size is 500 x 500 pixels with 350 DPI. By default, it will have a transparent background, but I can include a background if desired (color/gradient or pride flag is OK).',
-            basePrice: '3$ (usd) / 7K (idr)',
+            basePrice: '$3.00 for USD, Rp7.000 for IDR and 300pts for DA Points.',
             includes: ['High-resolution digital file (PNG)', 'Simple or transparent background', 'Up to 3 revisions'],
             // Added Order Form details for Mini Icon
             orderForm: [
@@ -273,10 +273,10 @@ export default {
           id: 2, // Re-indexed ID
           title: 'PWYW Sketch',
           image: 'https://f2.toyhou.se/file/f2-toyhou-se/characters/31895343?1740916021', // Placeholder image (replace with actual)
-          shortDescription: 'Pay What You Want minimal colored sketch.',
+          shortDescription: 'Pay What You Want minimal colored sketch commission.',
           details: {
             fullDescription: 'I am offering a PWYW (Pay What You Want) Sketch Commission! There is no minimum amount, but please pay what you think is fair. I offer a minimal colored sketch of any character you desire. By default, I use dark blue for sketching, but you are free to request any other color if desired!',
-            basePrice: 'min 1$ and 5k',
+            basePrice: 'min $1.00 for USD, Rp5.000 for IDR and 100pts for DA Points.',
             includes: ['High-resolution digital file (PNG)', 'Simple or transparent background', 'Up to 3 revisions'],
              // Added Order Form details for PWYW Sketch
             orderForm: [
@@ -284,26 +284,31 @@ export default {
                 'Prompt: (Ideas like pose and/or expression, optional but preferred)',
                 'Design Note: (Any specific details to consider while drawing the character)',
                 'Lineart Color: (Optional, leave blank otherwise)',
-                'Contact via: Discord/Toyhouse/Email'
+                'Contact via: Discord/Toyhouse/Email',
             ]
           }
         },
       ],
       galleryImages: {
-        'Mini Icon': [ // Correct key
-           // Note: These are currently placeholder images from the previous Bust Gallery.
-           // You should replace these with actual Mini Icon examples.
-          { id: 101, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96635855_TxoAVb7hLgsrj4m.png?1740972590', title: 'Ang', description: 'A sample bust commission showing X.' },
-          { id: 102, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96635948_RcthxomzTr22ago.png', title: 'Bust Example 2', description: 'Another example of a bust with Y style.' },
-           // Add more actual Mini Icon examples here
+        'Mini Icon': [
+          { id: 101, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96635855_TxoAVb7hLgsrj4m.png?1740972590', title: 'Mini Icon Example #1', description: 'Clients sona with Kavehs accessories' },
+          { id: 102, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96635948_RcthxomzTr22ago.png', title: 'Mini Icon Example #2', description: 'Matching Clients OC (1/2) #1.' },
+          { id: 103, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96635990_Y1BE1r1MdyoO5ec.png?1740972740', title: 'Mini Icon Example #3', description: 'Matching Clients OC (2/2) #1.' },
+          { id: 104, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96636017_Eqwm1RKKynP0Btk.png', title: 'Mini Icon Example #4', description: 'Fandom Character (I forgot her source.. will update later haha).' },
+          { id: 105, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96636036_7OlamPnfU5JDFlv.png', title: 'Mini Icon Example #5', description: 'Clients OC.' },
+          { id: 106, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96636053_dXPKDwzsuFRKE0k.png', title: 'Mini Icon Example #6', description: 'Clients RL childself.' },
+          { id: 107, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96636075_a5R3CEm3ztlDEUe.png', title: 'Mini Icon Example #7', description: 'Matching Clients OC (1/2) #2.' },
+          { id: 108, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96636116_0EHgSgoiqgfziT8.png', title: 'Mini Icon Example #8', description: 'Matching Clients OC (1/2) #2.' },
+          { id: 109, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96635906_mRPk76RYsaGLEwi.png?1740972641', title: 'Mini Icon Example #9', description: 'Conan Edogawa from Detective Conan/Case Closed.' }
+
         ],
-        'PWYW Sketch': [ // Correct key
-           // Note: These are currently placeholder images from the previous Full Body Gallery.
-           // You should replace these with actual PWYW Sketch examples.
-           { id: 201, image: 'https://f2.toyhou.se/file/f2-toyhou-se/watermarks/96635639_5K901TAgM.png?1740972298', title: 'Full Body Example 1', description: 'Sample full body artwork with Z background.' },
-           { id: 202, image: 'https://f2.toyhou.se/file/f2-toyhou-se/watermarks/96635722_k1OvxC3rD.png', title: 'Full Body Example 2', description: 'Another full body piece demonstrating W pose.' },
-           // Add more actual PWYW Sketch examples here
-        ],
+        'PWYW Sketch': [
+           { id: 201, image: 'https://f2.toyhou.se/file/f2-toyhou-se/watermarks/96635751_fZyVRXUUi.png', title: 'PWYW Result #1', description: 'Marius x Vyn (from Tears of Themis) with their fanchild.' },
+           { id: 202, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96635722_k1OvxC3rDQdXCNg.png', title: 'PWYW Result #2', description: 'Vyn x Artem (from Tears of Themis) cuddling.' },
+           { id: 203, image: 'https://f2.toyhou.se/file/f2-toyhou-se/watermarks/96635685_2yt5iiF68.png', title: 'PWYW Result #3', description: 'Marius x Vyn (from Tears of Themis) sleeping together.' },
+           { id: 204, image: 'https://f2.toyhou.se/file/f2-toyhou-se/watermarks/96635639_5K901TAgM.png?1740972298', title: 'PWYW Result #4', description: 'Vyn x Luke (from Tears of Themis) kissing.' },
+           { id: 205, image: 'https://f2.toyhou.se/file/f2-toyhou-se/watermarks/96634677_mnSf8CPwG.png?1740972234', title: 'PWYW Result #5', description: 'WLW OC kissing.' },
+          ],
       }
     };
   },

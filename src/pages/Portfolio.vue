@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Changed background color from bg-primary to hex code -->
     <section style="background-color: #8C90E7;" class="text-white text-center py-10 py-md-16">
       <v-container>
         <h1 class="text-h3 text-md-h2 font-weight-bold mb-4">My Portfolio</h1>
@@ -8,44 +7,40 @@
       </v-container>
     </section>
 
-    <section class="bg-white py-10 py-md-16">
+    <section class="bg-white py-10 py-md-16 dark-text">
       <v-container>
         <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">Zine Contributions Art</h2>
 
-        <v-row justify="center">
-          <v-col
+        <v-carousel
+          v-if="zineArt && zineArt.length > 0"
+          cycle
+          show-arrows="hover"
+          hide-delimiter-background
+          delimiter-icon="mdi-minus"
+          height="400"
+          class="dark-text" >
+          <v-carousel-item
             v-for="item in zineArt"
             :key="item.id"
-            cols="12"
-            md="10"
-          >
-            <v-card elevation="2" class="mb-8 dark-text"> <!-- Card background is default white -->
-              <v-row no-gutters>
-                <v-col cols="12" md="6">
-                  <v-img
-                    :src="item.image"
-                    :alt="item.title"
-                    aspect-ratio="1"
-                    cover
-                    class="fill-height cursor-pointer"
-                    @click="openDialog(item)"
-                  ></v-img>
-                </v-col>
-                <v-col cols="12" md="6">
-                  <v-card-title class="dark-text">{{ item.title }}</v-card-title>
-                  <v-card-subtitle v-if="item.zine">From: {{ item.zine }}</v-card-subtitle>
-                  <v-card-text>
-                    <p>{{ item.description }}</p>
-                  </v-card-text>
-                </v-col>
-              </v-row>
-            </v-card>
-          </v-col>
-        </v-row>
+            :src="item.thumbnail" :alt="item.title"
+            cover
+            class="cursor-pointer"
+            @click="openDialog(item)" >
+            <div class="d-flex fill-height justify-center align-end pa-3 text-white" style="background: rgba(0, 0, 0, 0.5);">
+               <div class="text-center">
+                <h3 class="text-h6 font-weight-bold mb-1">{{ item.title }}</h3>
+                <p v-if="item.zine" class="text-body-2">{{ item.zine }}</p>
+               </div>
+            </div>
+          </v-carousel-item>
+        </v-carousel>
+        <p v-else class="text-center text-medium-emphasis py-8">No zine contributions available yet.</p>
+
       </v-container>
     </section>
 
-    <section style="background-color: #E9BFE3;" class="py-10 py-md-16">
+
+    <section style="background-color: #E9BFE3;" class="py-10 py-md-16 dark-text">
       <v-container>
         <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">Best Artwork by Year</h2>
 
@@ -84,23 +79,19 @@
                     <v-carousel-item
                       v-for="artwork in yearlyArtwork[year]"
                       :key="artwork.id"
-                      :src="artwork.image"
-                      :alt="artwork.title"
+                      :src="artwork.thumbnail" :alt="artwork.title"
                       cover
                       class="cursor-pointer"
-                      @click="openDialog(artwork)"
-                    >
+                      @click="openDialog(artwork)" >
 
                         <div class="d-flex fill-height justify-center align-end pa-3 text-white" style="background: rgba(0, 0, 0, 0.3);">
-                           <div class="text-center">
-                             <h3 class="text-h6 font-weight-bold mb-1">{{ artwork.title }}</h3>
-                             <p class="text-body-2">{{ artwork.description }}</p>
-                           </div>
+                          <div class="text-center">
+                            <h3 class="text-h6 font-weight-bold mb-1">{{ artwork.title }}</h3>
+                            <p v-if="artwork.description" class="text-body-2">{{ artwork.description }}</p> </div>
                         </div>
                     </v-carousel-item>
                   </v-carousel>
-                    <p v-else class="text-center text-medium-emphasis py-8">No artwork available for {{ year }} yet.</p> <!-- Inherits .dark-text with opacity -->
-                </v-card-text>
+                    <p v-else class="text-center text-medium-emphasis py-8">No artwork available for {{ year }} yet.</p> </v-card-text>
               </v-card>
             </v-window-item>
           </v-window>
@@ -108,38 +99,64 @@
       </v-container>
     </section>
 
-     <v-dialog
+      <v-dialog
        v-model="dialogOpen"
        max-width="800"
      >
        <v-card>
           <v-card-title class="d-flex justify-space-between align-center dark-text">
-             <span>{{ selectedImage ? selectedImage.title : 'Image Preview' }}</span>
-             <v-btn icon @click="closeDialog">
-               <v-icon color="dark-text">mdi-close</v-icon>
-             </v-btn>
+                <span>{{ selectedImage ? selectedImage.title : 'Image Preview' }}</span>
+                <v-btn icon @click="closeDialog">
+                  <v-icon color="dark-text">mdi-close</v-icon>
+                </v-btn>
           </v-card-title>
-          <v-card-text class="pa-0">
-             <v-img
-                v-if="selectedImage"
-                :src="selectedImage.image"
-                :alt="selectedImage.title"
-                contain
-                width="100%"
-             ></v-img>
-          </v-card-text>
-           <v-card-actions v-if="selectedImage && selectedImage.description">
-             <v-card-text class="text-body-2 text-medium-emphasis"> <!-- Text is default dark/black with opacity -->
-                {{ selectedImage.description }}
-             </v-card-text>
-           </v-card-actions>
-         </v-card>
-       </v-dialog>
 
-      <!-- Background color white, Added dark-text class for text color -->
-      <section class="text-center py-10 dark-text" style="background-color: #ffffff;"> <!-- Explicitly setting background to white -->
-         <!-- Button color changed from primary to hex code -->
-         <v-btn color="#8C90E7" to="/">Back to About Me</v-btn>
+          <v-card-text class="pa-0">
+             <v-carousel
+                v-if="selectedImage && selectedImage.images && selectedImage.images.length > 0"
+                cycle
+                :show-arrows="([1, 3].includes(selectedImage.id) ? 'hover' : false)"
+                delimiter-icon="mdi-minus"
+                height="500"
+                v-model="modalCarouselIndex" > <v-carousel-item
+                  v-for="img in selectedImage.images"
+                  :key="img.id"
+                  :src="img.src" :alt="(selectedImage.title || '') + ' - Image ' + img.id"
+                  contain width="100%"
+                >
+                </v-carousel-item>
+              </v-carousel>
+
+              <v-img
+                v-else-if="selectedImage && selectedImage.fullImage"
+                :src="selectedImage.fullImage" :alt="selectedImage.title"
+                contain width="100%"
+              ></v-img>
+
+              <p v-else class="text-center text-medium-emphasis py-8">Image preview not available.</p>
+
+          </v-card-text>
+
+          <v-card-actions>
+             <v-card-text class="text-body-2 text-medium-emphasis">
+              <div class="text-center">
+                <h3 class="text-h6 font-weight-bold mb-1">{{ selectedImage ? selectedImage.title : '' }}</h3>
+
+                <p v-if="selectedImage && selectedImage.images && selectedImage.images[modalCarouselIndex]">
+                   {{ selectedImage.images[modalCarouselIndex].description }}
+                </p>
+                <p v-else-if="selectedImage && selectedImage.description">
+                   {{ selectedImage.description }}
+                </p>
+
+              </div>
+             </v-card-text>
+          </v-card-actions>
+
+         </v-card>
+     </v-dialog>
+
+      <section class="text-center py-10 dark-text" style="background-color: #ffffff;"> <v-btn color="#8C90E7" to="/">Back to About Me</v-btn>
       </section>
 
   </div>
@@ -151,56 +168,81 @@ export default {
   data() {
     return {
       activeYearTab: null,
-      dialogOpen: false,
-      selectedImage: null, // Holds the data of the image clicked
+      dialogOpen: false, // State for the modal
+      selectedImage: null, // Holds the data of the item clicked (either a zine project or a yearly artwork)
+      modalCarouselIndex: 0, // Added to track the active slide in the modal carousel
+
+      // Updated Zine Art data structure for carousel in modal
       zineArt: [
         {
           id: 1,
-          title: 'Void Space Zine Piece Title',
-          image: 'https://via.placeholder.com/1200x900/0000FF/FFFFFF?text=Void+Zine+Art+1', // Increased size for modal preview
-          description: 'This piece was created for the Void Space Zine, exploring the theme of quiet moments in vast, empty spaces. I focused on color gradients and a sense of solitude.',
-          zine: 'VOID SPACE ZINE PROJECT'
-        },
-        {
-          id: 2,
-          title: 'Witch of Time Zine Art Title',
-          image: 'https://via.placeholder.com/1200x900/FF0000/FFFFFF?text=Witch+Zine+Art+2', // Increased size for modal preview
-          description: 'My contribution to the Witch of Time Zine, depicting the character in a moment of contemplation. I aimed for a moody atmosphere using strong shadows and highlights.',
-          zine: 'WITCH OF TIME ZINE'
+          title: 'Void Space Zine Project Contribution', // Title for the overall project
+          zine: 'VOID SPACE ZINE PROJECT', // Zine name (Used for carousel item, not modal description)
+          thumbnail: './zine/z1.gif', // Thumbnail for the main carousel
+            // Array of images for the modal carousel - each has a description
+          images: [
+            { id: 101, src: './zine/CelKayRai_School_Days.png', description: 'Collaboration between Me, Cel and Kay. We drew a "what-if" school AU, where we the members of Void Space engage various activites in the school hallway!' },
+            { id: 102, src: './zine/RaiCel_Hectic_Match.png', description: 'Collaboration between Me and Cel, a crossover and self-insert of IDV and TF2.' },
+            { id: 103, src: './zine/RaiShou_Senra.png', description: 'Collaboration between Me and Shou where we drew our OCTP together.' },
+            { id: 104, src: './zine/Tetragonodeeznutz_yaoi.png', description: 'Collaboration between Me, Kay, Qani and Andra where our sona are together pinching each others cheeks.' },
+            { id: 105, src: './zine/Rai_Busy_Classroom.png', description: 'A freebie drawn by me, similar to the first piece where I depict a school AU of Void Space in a classroom, base used.' },
+          ]
         },
           {
-          id: 3,
-          title: 'Homestuck Vol.10 Zine Piece',
-          image: 'https://via.placeholder.com/1200x900/00FF00/000000?text=HS+Zine+Art+3', // Increased size for modal preview
-          description: 'Inspired by the track "Creata" from the Homestuck Vol.10 OST, this piece visualizes the energetic and chaotic feeling of the music. It was a fun challenge to translate sound into visuals.',
-          zine: 'Homestuck Vol.10 Fan Zine'
+          id: 2,
+          title: 'Witch of Time Zine Contribution',
+          zine: 'WITCH OF TIME ZINE', // Used for carousel item, not modal description
+          thumbnail: './zine/z2.png', // Thumbnail for the main carousel
+          images: [ // Images for the modal carousel
+            { id: 201, src: './zine/Damara_Zine.png', description: 'Primary artwork for the Witch of Time Zine. Moody atmosphere.' },
+          ]
         },
-        // Add more zine art objects here
+        {
+          id: 3,
+          title: 'Homestuck Vol.10 Zine Contribution',
+          zine: 'Homestuck Vol.10 Fan Zine', // Used for carousel item, not modal description
+          thumbnail: './zine/z3.gif', // Thumbnail for the main carousel
+          images: [ // Images for the modal carousel
+            { id: 301, src: './zine/01_Creata_Sil.png', description: 'Contribution piece for the Homestuck Vol.10 Fan Zine, inspired by "Creata".' },
+              { id: 302, src: './zine/22_Thanks_For_Playing_Sil.png', description: 'An alternative version or related sketch for the zine.' },
+          ]
+        },
+        {
+          id: 4,
+          title: 'Bloodswap Zine Contribution',
+          zine: 'Bloodswap Zine', // Used for carousel item, not modal description
+          thumbnail: './zine/z4.png', // Thumbnail for the main carousel
+          images: [ // Images for the modal carousel
+            { id: 301, src: './zine/Bloodswap_Zine.png', description: 'Contribution piece for the Homestuck Vol.10 Fan Zine, inspired by "Creata".' }
+           ]
+        },
       ],
+
+      // Updated Yearly Artwork data structure with thumbnails and full images
       yearlyArtwork: {
         2025: [
-           // Add artwork for 2025 here
-           // Example: { id: 202501, title: 'Concept Work 2025', image: 'https://via.placeholder.com/1200x800/123456/FFFFFF?text=Artwork+2025-1', description: 'Latest concept work.' },
+            // Add artwork for 2025 here with 'thumbnail' and 'fullImage'
+            // Example: { id: 202501, title: 'Concept Work 2025', thumbnail: '...', fullImage: '...', description: 'Latest concept work.' },
         ],
         2024: [
-           { id: 202401, title: 'Digital Painting Study', image: 'https://via.placeholder.com/1200x800/FFFF00/000000?text=Artwork+2024-1', description: 'A recent study focusing on lighting and textures.' },
-           { id: 202402, title: 'Character Concept Sketch', image: 'https://via.placeholder.com/1200x800/FF00FF/FFFFFF?text=Artwork+2024-2', description: 'Exploration for a new character design.' },
+            { id: 202401, title: 'Digital Painting Study', thumbnail: 'https://via.placeholder.com/600x400/FFFF00/000000?text=Artwork+2024-1+Thumb', fullImage: 'https://via.placeholder.com/1200x800/FFFF00/000000?text=Artwork+2024-1+Full', description: 'A recent study focusing on lighting and textures.' },
+            { id: 202402, title: 'Character Concept Sketch', thumbnail: 'https://via.placeholder.com/600x400/FF00FF/FFFFFF?text=Artwork+2024-2+Thumb', fullImage: 'https://via.placeholder.com/1200x800/FF00FF/FFFFFF?text=Artwork+2024-2+Full', description: 'Exploration for a new character design.' },
         ],
         2023: [
-          { id: 202301, title: 'Illustration for a Friend', image: 'https://via.placeholder.com/1200x800/00FFFF/000000?text=Artwork+2023-1', description: 'A personal illustration completed last year.' },
-          { id: 202302, title: 'UI Mockup Practice', image: 'https://via.placeholder.com/1200x800/FFA500/FFFFFF?text=UI+Mockup+2023-2', description: 'Working on user interface design principles.' },
+          { id: 202301, title: 'Illustration for a Friend', thumbnail: 'https://via.placeholder.com/600x400/00FFFF/000000?text=Artwork+2023-1+Thumb', fullImage: 'https://via.placeholder.com/1200x800/00FFFF/000000?text=Artwork+2023-1+Full', description: 'A personal illustration completed last year.' },
+          { id: 202302, title: 'UI Mockup Practice', thumbnail: 'https://via.placeholder.com/600x400/FFA500/FFFFFF?text=UI+Mockup+2023-2+Thumb', fullImage: 'https://via.placeholder.com/1200x800/FFA500/FFFFFF?text=UI+Mockup+2023-2+Full', description: 'Working on user interface design principles.' },
         ],
-         2022: [
-          { id: 202201, title: 'Early Digital Art Experiment', image: 'https://via.placeholder.com/1200x800/800080/FFFFFF?text=Artwork+2022-1', description: 'One of my earlier attempts at digital painting.' },
-        ],
-         2021: [
-           // Add artwork for 2021 here
-           // Example: { id: 202101, title: 'Sketchbook Entry 2021', image: 'https://via.placeholder.com/1200x800/ABCDEF/000000?text=Artwork+2021-1', description: 'From my physical sketchbook, digitized.' },
-        ],
-         2020: [
-           // Add artwork for 2020 here
-            // Example: { id: 202001, title: 'First Digital Piece', image: 'https://via.placeholder.com/1200x800/FEDCBA/000000?text=Artwork+2020-1', description: 'This is where I started exploring digital art.' },
-        ],
+          2022: [
+           { id: 202201, title: 'Early Digital Art Experiment', thumbnail: 'https://via.placeholder.com/600x400/800080/FFFFFF?text=Artwork+2022-1+Thumb', fullImage: 'https://via.placeholder.com/1200x800/800080/FFFFFF?text=Artwork+2022-1+Full', description: 'One of my earlier attempts at digital painting.' },
+         ],
+          2021: [
+            // Add artwork for 2021 here with 'thumbnail' and 'fullImage'
+            // Example: { id: 202101, title: 'Sketchbook Entry 2021', thumbnail: '...', fullImage: '...', description: 'From my physical sketchbook, digitized.' },
+          ],
+          2020: [
+             // Add artwork for 2020 here with 'thumbnail' and 'fullImage'
+              // Example: { id: 202001, title: 'First Digital Piece', thumbnail: '...', fullImage: '...', description: 'This is where I started exploring digital art.' },
+          ],
         // Add more years and artwork objects here if needed in the future
       }
     };
@@ -217,20 +259,24 @@ export default {
       return years.sort((a, b) => b - a);
     }
   },
-   mounted() {
+    mounted() {
     // Set the default active tab to the most recent year
     if (this.sortedYears.length > 0) {
       this.activeYearTab = this.sortedYears[0];
     }
   },
   methods: {
-    openDialog(artwork) {
-      this.selectedImage = artwork;
-      this.dialogOpen = true;
+    // openDialog is used for modal previews for both Zine Art and Yearly Artwork
+    openDialog(item) {
+      this.selectedImage = item;
+      this.modalCarouselIndex = 0; // Reset modal carousel to the first slide
+      this.dialogOpen = true; // Control the modal's open state
     },
+    // closeDialog closes the modal
     closeDialog() {
       this.dialogOpen = false;
-      this.selectedImage = null; // Clear selected image when closed
+      this.selectedImage = null; // Clear selected item when closed
+      this.modalCarouselIndex = 0; // Reset index on close
     }
   }
 };
@@ -238,9 +284,6 @@ export default {
 
 <style scoped>
 /* Custom styles if needed */
-.v-carousel-item .d-flex {
-    background: rgba(0, 0, 0, 0.3); /* Dark overlay for text readability */
-}
 
 .cursor-pointer {
   cursor: pointer;
@@ -262,7 +305,7 @@ export default {
     padding-bottom: 8px; /* Reduce default padding below title/subtitle */
 }
 
-/* Style for Will/Won't Draw lists */
+/* Style for lists */
 .v-card-text ul {
     list-style: disc;
     padding-left: 20px; /* Add some padding for the list bullets */
@@ -273,7 +316,24 @@ export default {
   margin-bottom: 8px; /* Add space between list items */
 }
 
-.dark-text {
-  color: #23254d;
+/* Styles for the carousel item overlay text */
+.v-carousel-item .d-flex {
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
 }
+/* Styles for the carousel inside the modal item overlay text */
+/* Use a more specific selector if needed, but this might be sufficient */
+.v-dialog .v-carousel-item .d-flex {
+    background: rgba(0, 0, 0, 0.3); /* Slightly lighter overlay in modal carousel */
+}
+
+
+/* Override text color for elements where default text-medium-emphasis might be too light on the new dark-text color */
+/* This might be needed depending on the exact shade of text-medium-emphasis and #23254d */
+/* You can uncomment and adjust this rule if the text-medium-emphasis paragraphs are too light */
+/*
+.dark-text .text-medium-emphasis {
+  color: #23254d !important; // Ensure it uses the main dark text color
+  opacity: 1 !important; // Remove opacity if desired
+}
+*/
 </style>

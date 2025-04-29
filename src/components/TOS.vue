@@ -1,55 +1,63 @@
 <template>
   <v-card flat>
     <v-card-text class="tos-text">
-      <h3 class="text-h6 mb-4">Terms of Service (TOS) for Commissions</h3>
-      <p>By commissioning me, you agree to the following terms:</p>
+      <h3 class="text-h6 mb-4">Terms of Service (TOS) for Commissions & Designs</h3>
+      <p>By commissioning or purchasing a design from me, you agree to the following terms:</p>
 
-      <h4>Payment:</h4>
+      <h4 class="mt-6">Payment:</h4>
       <ul>
-        <li class="mb-2">I accept payment in <strong>USD through Paypal/Ko-fi</strong> and <strong>IDR through QRIS</strong>.</li>
-        <li class="mb-2"><strong>Full payment is due after settling on the sketch.</strong> I will proceed with the commission after receiving payment.</li>
-        <li>Payment plans can be discussed upon request.</li>
+        <li class="mb-2">I accept payment in USD (PayPal/Ko-fi), IDR (QRIS), art, vouchers, DeviantArt Points, gift cards (TH Premium/Discord Nitro/Steam), and trades.</li>
+        <li class="mb-2"><strong>Full payment is due after sketch approval</strong>. Work proceeds after payment is received.</li>
+        <li>Payment plans may be discussed if needed.</li>
       </ul>
 
-      <h4 class="mt-4">Guidelines and Process:</h4>
+      <h4 class="mt-4">Process & Guidelines:</h4>
       <ul>
-        <li class="mb-2">I reserve the right to decline any commission request for any reason.</li>
-        <li class="mb-2">Please provide clear visual references and pose details to avoid misunderstandings. Quality over quantity; no pressure to make multiple offers.</li>
-        <li>Additional fees may apply for complex designs/prompts. This will be discussed and agreed upon before payment.</li>
+        <li class="mb-2">I may decline any commission or offer without needing to explain why.</li>
+        <li class="mb-2">Provide clear visual references and instructions. Quality over quantity.</li>
+        <li>Additional fees apply for complex prompts, discussed before payment.</li>
       </ul>
 
       <h4 class="mt-4">Revisions:</h4>
       <ul>
-        <li class="mb-2">Revisions are allowed during the sketching/lineart stage. <strong>Up to 3 major revisions</strong> are permitted after agreement on the initial sketch.</li>
-        <li>Major revisions (e.g., significant pose or design alterations) cannot be accepted once the coloring/shading process begins.</li>
+        <li class="mb-2">Up to <strong>3 major revisions</strong> allowed at the sketch/lineart stage.</li>
+        <li>Once coloring starts, only minor tweaks can be accepted.</li>
       </ul>
 
-      <h4 class="mt-4">Cancellation and Refunds:</h4>
+      <h4 class="mt-4">Cancellation & Refunds:</h4>
       <ul>
-        <li class="mb-2">If I have to cancel the commission due to unforeseen circumstances on my end, you will receive a full refund.</li>
-        <li>If you wish to cancel after work has begun, the refund amount will depend on the stage of completion (e.g., partial refund if only sketch is done, no refund if coloring has started). This will be handled on a case-by-case basis.</li>
+        <li class="mb-2">If I cancel, a full refund will be issued.</li>
+        <li>If you cancel after work has started, a partial refund may be possible depending on progress.</li>
       </ul>
 
-      <h4 class="mt-4">Delivery and Completion:</h4>
+      <h4 class="mt-4">Delivery Timeline:</h4>
       <ul>
-        <li class="mb-2">Commissions will be delivered via <strong>Discord, Email, or Google Drive</strong> as requested by the client.</li>
-        <li>Completion time typically ranges between <strong>1–2 months</strong>, subject to workload and real-life circumstances. I will keep you updated on progress.</li>
+        <li class="mb-2">Delivery method: Discord, Email, or Google Drive.</li>
+        <li>Estimated delivery time: <strong>within 1 month</strong>. I will update you regularly.</li>
       </ul>
 
-      <h4 class="mt-4">Blacklisting and Breach of Terms:</h4>
+      <h4 class="mt-4">Design-Specific Terms:</h4>
       <ul>
-        <li class="mb-2">I reserve the right to blacklist users who violate my TOS, commit chargebacks, or harass me.</li>
-        <li class="mb-2">If blacklisted, you may lose ownership rights to the commissioned work, and further transactions will be refused.</li>
-        <li>Respectful communication is required at all times.</li>
+        <li class="mb-2">Design holds are allowed up to 2 months with check-ins.</li>
+        <li class="mb-2">Do not resell designs obtained through trade/freebies unless extra value has been added (e.g., art).</li>
+        <li class="mb-2">Emergency resales allowed with prior notice. I'm open to helping if needed.</li>
+        <li>If you no longer want the design, you may return it to me.</li>
+      </ul>
+
+      <h4 class="mt-4">Blacklist & Conduct:</h4>
+      <ul>
+        <li class="mb-2">Chargebacks, harassment, or TOS violations will result in blacklisting.</li>
+        <li>Blacklisted users lose commission rights and future access.</li>
+        <li>Please be respectful in all interactions.</li>
       </ul>
 
       <h4 class="mt-4">Disclaimer:</h4>
       <ul>
-        <li>I am not responsible for how commissioned art is used once delivered, as long as it complies with my Terms of Use (TOU).</li>
+        <li>I am not responsible for how my work is used after delivery, as long as it follows the TOU.</li>
       </ul>
 
       <p class="mt-6 font-weight-bold">
-        If you have read my TOS, please include <strong>"sakayume"</strong> when contacting me about a commission!
+        If you’ve read my TOS, please include <strong>"sakayume"</strong> when messaging me about a commission or adopt!
       </p>
 
       <p class="mt-4 text-caption text-medium-emphasis">Last Updated: 29th April 2025</p>
