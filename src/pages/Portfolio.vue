@@ -79,15 +79,14 @@
                     <v-carousel-item
                       v-for="artwork in yearlyArtwork[year]"
                       :key="artwork.id"
-                      :src="artwork.thumbnail" :alt="artwork.title"
-                      cover
+                      :src="artwork.fullImage" :alt="artwork.title" cover
                       class="cursor-pointer"
                       @click="openDialog(artwork)" >
 
                         <div class="d-flex fill-height justify-center align-end pa-3 text-white" style="background: rgba(0, 0, 0, 0.3);">
                           <div class="text-center">
                             <h3 class="text-h6 font-weight-bold mb-1">{{ artwork.title }}</h3>
-                            <p v-if="artwork.description" class="text-body-2">{{ artwork.description }}</p> </div>
+                            </div>
                         </div>
                     </v-carousel-item>
                   </v-carousel>
@@ -118,7 +117,8 @@
                 :show-arrows="([1, 3].includes(selectedImage.id) ? 'hover' : false)"
                 delimiter-icon="mdi-minus"
                 height="500"
-                v-model="modalCarouselIndex" > <v-carousel-item
+                v-model="modalCarouselIndex" >
+                <v-carousel-item
                   v-for="img in selectedImage.images"
                   :key="img.id"
                   :src="img.src" :alt="(selectedImage.title || '') + ' - Image ' + img.id"
@@ -145,11 +145,7 @@
                 <p v-if="selectedImage && selectedImage.images && selectedImage.images[modalCarouselIndex]">
                    {{ selectedImage.images[modalCarouselIndex].description }}
                 </p>
-                <p v-else-if="selectedImage && selectedImage.description">
-                   {{ selectedImage.description }}
-                </p>
-
-              </div>
+                </div>
              </v-card-text>
           </v-card-actions>
 
@@ -172,7 +168,7 @@ export default {
       selectedImage: null, // Holds the data of the item clicked (either a zine project or a yearly artwork)
       modalCarouselIndex: 0, // Added to track the active slide in the modal carousel
 
-      // Updated Zine Art data structure for carousel in modal
+      // Updated Zine Art data structure (no changes needed here based on the request)
       zineArt: [
         {
           id: 1,
@@ -194,7 +190,7 @@ export default {
           zine: 'WITCH OF TIME ZINE', // Used for carousel item, not modal description
           thumbnail: './zine/z2.png', // Thumbnail for the main carousel
           images: [ // Images for the modal carousel
-            { id: 201, src: './zine/Damara_Zine.png', description: 'Primary artwork for the Witch of Time Zine. Moody atmosphere.' },
+            { id: 201, src: './zine/Damara_Zine.png', description: 'Contribution piece for the Witch of Time Zine, Art of Damara Megido as a Maiko.' },
           ]
         },
         {
@@ -204,7 +200,7 @@ export default {
           thumbnail: './zine/z3.gif', // Thumbnail for the main carousel
           images: [ // Images for the modal carousel
             { id: 301, src: './zine/01_Creata_Sil.png', description: 'Contribution piece for the Homestuck Vol.10 Fan Zine, inspired by "Creata".' },
-              { id: 302, src: './zine/22_Thanks_For_Playing_Sil.png', description: 'An alternative version or related sketch for the zine.' },
+              { id: 302, src: './zine/22_Thanks_For_Playing_Sil.png', description: 'Contribution piece for the Homestuck Vol.10 Fan Zine, inspired by "Thank You For Playing".' },
           ]
         },
         {
@@ -213,35 +209,42 @@ export default {
           zine: 'Bloodswap Zine', // Used for carousel item, not modal description
           thumbnail: './zine/z4.png', // Thumbnail for the main carousel
           images: [ // Images for the modal carousel
-            { id: 301, src: './zine/Bloodswap_Zine.png', description: 'Contribution piece for the Homestuck Vol.10 Fan Zine, inspired by "Creata".' }
+            { id: 301, src: './zine/Bloodswap_Zine.png', description: 'Contribution piece for the Bloodswap Zine, depicting Kanaya Maryam as a purpleblood and Equius Zahhak as jadeblood.' }
            ]
         },
       ],
 
-      // Updated Yearly Artwork data structure with thumbnails and full images
+      // Updated Yearly Artwork data structure - thumbnail and description removed
       yearlyArtwork: {
         2025: [
-            // Add artwork for 2025 here with 'thumbnail' and 'fullImage'
-            // Example: { id: 202501, title: 'Concept Work 2025', thumbnail: '...', fullImage: '...', description: 'Latest concept work.' },
+        { id: 202501, title: 'Yakuza', fullImage: './artwork/2025_1.png' },
+        { id: 202502, title: 'SHOWTIME!', fullImage: './artwork/2025_2.png' },
+        { id: 202503, title: 'Victor Grantz', fullImage: './artwork/2025_3.png' },
         ],
         2024: [
-            { id: 202401, title: 'Digital Painting Study', thumbnail: 'https://via.placeholder.com/600x400/FFFF00/000000?text=Artwork+2024-1+Thumb', fullImage: 'https://via.placeholder.com/1200x800/FFFF00/000000?text=Artwork+2024-1+Full', description: 'A recent study focusing on lighting and textures.' },
-            { id: 202402, title: 'Character Concept Sketch', thumbnail: 'https://via.placeholder.com/600x400/FF00FF/FFFFFF?text=Artwork+2024-2+Thumb', fullImage: 'https://via.placeholder.com/1200x800/FF00FF/FFFFFF?text=Artwork+2024-2+Full', description: 'Exploration for a new character design.' },
+            { id: 202401, title: 'I Heart U', fullImage: './artwork/2024_1.png' },
+            { id: 202402, title: 'Stuck Together', fullImage: './artwork/2024_2.png' },
+            { id: 202403, title: 'My Love', fullImage: './artwork/2024_3.png' },
         ],
         2023: [
-          { id: 202301, title: 'Illustration for a Friend', thumbnail: 'https://via.placeholder.com/600x400/00FFFF/000000?text=Artwork+2023-1+Thumb', fullImage: 'https://via.placeholder.com/1200x800/00FFFF/000000?text=Artwork+2023-1+Full', description: 'A personal illustration completed last year.' },
-          { id: 202302, title: 'UI Mockup Practice', thumbnail: 'https://via.placeholder.com/600x400/FFA500/FFFFFF?text=UI+Mockup+2023-2+Thumb', fullImage: 'https://via.placeholder.com/1200x800/FFA500/FFFFFF?text=UI+Mockup+2023-2+Full', description: 'Working on user interface design principles.' },
+          { id: 202301, title: 'Possesive', fullImage: './artwork/2023_1.png' },
+          { id: 202302, title: 'Happily Sitting', fullImage: './artwork/2023_2.png' },
         ],
           2022: [
-           { id: 202201, title: 'Early Digital Art Experiment', thumbnail: 'https://via.placeholder.com/600x400/800080/FFFFFF?text=Artwork+2022-1+Thumb', fullImage: 'https://via.placeholder.com/1200x800/800080/FFFFFF?text=Artwork+2022-1+Full', description: 'One of my earlier attempts at digital painting.' },
+           { id: 202201, title: 'The Cowboy', fullImage: './artwork/2022_1.png' },
+           { id: 202202, title: 'Awaits', fullImage: './artwork/2022_2.png' },
+           { id: 202203, title: 'Hidden in The Forest', fullImage: './artwork/2022_3.jpg' },
+           { id: 202204, title: 'Whatcha Readin?', fullImage: './artwork/2022_4.png' },
          ],
           2021: [
-            // Add artwork for 2021 here with 'thumbnail' and 'fullImage'
-            // Example: { id: 202101, title: 'Sketchbook Entry 2021', thumbnail: '...', fullImage: '...', description: 'From my physical sketchbook, digitized.' },
+          { id: 202101, title: 'Watch Out!', fullImage: './artwork/2021_1.png' },
+          { id: 202102, title: 'Highbloods [Collab]', fullImage: './artwork/2021_2.png' },
           ],
           2020: [
-             // Add artwork for 2020 here with 'thumbnail' and 'fullImage'
-              // Example: { id: 202001, title: 'First Digital Piece', thumbnail: '...', fullImage: '...', description: 'This is where I started exploring digital art.' },
+           // Note: Duplicates still exist from the original data
+           { id: 202001, title: 'Among The Sunflowers', fullImage: './artwork/2020_1.png' },
+           { id: 202002, title: 'Zoom Meeting', fullImage: './artwork/2020_2.png' },
+           { id: 202003, title: 'Hungry Days', fullImage: './artwork/2020_3.png' },
           ],
         // Add more years and artwork objects here if needed in the future
       }

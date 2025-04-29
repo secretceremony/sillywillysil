@@ -4,7 +4,25 @@ All notable changes to this project will be documented here.
 
 ## [Unreleased]
 
-- [ ] Further enhancements to image galleries on Portfolio and Commission pages.
+- Layout Improvements
+- TBA
+
+---
+
+## [v1.1.1] - 2025-04-29
+
+### Added
+- Implemented a consistent color palette across all pages and components.
+- Added Zine Contributions section and data to the Portfolio page.
+- Included a Commission Results section/gallery (assuming this is distinct from Examples or populating it).
+- Added Ko-fi and Trakteer support links/buttons on the landing page.
+- Implemented form validation/error handling for the contact form to prevent sending if fields are not filled.
+- Added Illustration to yearly art showcase.
+
+### Changed
+- Adjusted content and styling for Terms of Service (TOS) and Terms of Use (TOU).
+- Updated Commission Type details/presentation.
+- Edited Zine contributions's descriptions.
 
 ---
 
