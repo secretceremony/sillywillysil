@@ -31,16 +31,16 @@
       </v-container>
     </section>
 
-      <section class="bg-white py-10 py-md-16">
+      <section class="bg-white py-10 py-md-16 dark-text">
          <v-container>
-             <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">Will & Won't Draw</h2>
+             <h2 class="text-h4 font-weight-bold text-center mb-8">Will & Won't Draw</h2>
              <v-row justify="center">
                  <v-col cols="12" md="6">
                      <v-card elevation="2" class="fill-height"> <v-card-title class="text-h6 font-weight-semibold" style="color: #BAA7E6;">
                              <v-icon left color="#BAA7E6">mdi-check-circle-outline</v-icon>
                              Will Draw
                          </v-card-title>
-                          <v-card-text> <ul class="dark-text">
+                          <v-card-text> <ul>
                                  <li class="mb-2">Humanoids / Anthro / Feral (Depending on commission type).</li>
                                  <li class="mb-2">Original Characters (OCs) and Franchise Characters.</li>
                                  <li class="mb-2">Complex Designs.</li>
@@ -54,7 +54,7 @@
                               <v-icon left color="#ECC9dc">mdi-close-circle-outline</v-icon>
                               Won't Draw
                           </v-card-title>
-                          <v-card-text> <ul class="dark-text">
+                          <v-card-text> <ul>
                                  <li class="mb-2">Mecha.</li>
                                  <li class="mb-2">AI designs/characters.</li>
                                  <li class="mb-2">NSFW (Fetish/Kink/etc).</li>
@@ -69,9 +69,9 @@
       </section>
 
 
-    <section class="bg-white py-10 py-md-16">
+    <section class="bg-white py-10 py-md-16 dark-text">
       <v-container>
-        <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">Commission Types</h2>
+        <h2 class="text-h4 font-weight-bold text-center mb-8">Commission Types</h2>
 
         <v-row justify="center">
           <v-col
@@ -83,7 +83,7 @@
           >
             <v-card
               elevation="2"
-              class="fill-height d-flex flex-column cursor-pointer dark-text"
+              class="fill-height d-flex flex-column cursor-pointer"
               @click="openTypeDetailsDialog(type)"
             > <v-img
                   v-if="type.image"
@@ -106,12 +106,12 @@
     <v-dialog
       v-model="typeDetailsDialogOpen"
       max-width="600"
-    > <v-card> <v-card-title class="d-flex justify-space-between align-center dark-text"> <span>{{ selectedCommissionTypeDetails ? selectedCommissionTypeDetails.title : 'Commission Details' }}</span>
+    > <v-card> <v-card-title class="d-flex justify-space-between align-center"> <span>{{ selectedCommissionTypeDetails ? selectedCommissionTypeDetails.title : 'Commission Details' }}</span>
           <v-btn icon @click="closeTypeDetailsDialog">
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-card-title>
-        <v-card-text v-if="selectedCommissionTypeDetails" class="dark-text">
+        <v-card-text v-if="selectedCommissionTypeDetails">
           <v-img
                v-if="selectedCommissionTypeDetails.image"
                :src="selectedCommissionTypeDetails.image"
@@ -120,10 +120,13 @@
                contain
                class="mb-4"
           ></v-img>
-          <p class="text-body-1 font-weight-semibold mb-2">Description:</p> <p class="text-body-2 text-medium-emphasis">{{ selectedCommissionTypeDetails.details.fullDescription }}</p> <p class="text-body-1 font-weight-semibold mt-4 mb-2">Starting Price:</p> <p class="text-body-2 text-medium-emphasis">{{ selectedCommissionTypeDetails.details.basePrice }}</p> <p class="text-body-1 font-weight-semibold mt-4 mb-2">What's Included:</p> <ul class="text-body-2 text-medium-emphasis"> <li v-for="(item, i) in selectedCommissionTypeDetails.details.includes" :key="i">{{ item }}</li>
+
+          <p class="text-body-1 font-weight-semibold mb-2">Description:</p> <p class="text-body-2 text-medium-emphasis">{{ selectedCommissionTypeDetails.details.fullDescription }}</p> <p class="text-body-1 font-weight-semibold mt-4 mb-2">Starting Price:</p> <p class="text-body-2 text-medium-emphasis">{{ selectedCommissionTypeDetails.details.basePrice }}</p> <p class="text-body-1 font-weight-semibold mt-4 mb-2">What's Included:</p> <ul class="text-body-2 text-medium-emphasis"> <li v-for="(item, i) in selectedCommissionTypeDetails.details.includes" :key="'include-item-' + i">{{ item }}</li>
             </ul>
 
-        </v-card-text>
+            <p class="text-body-1 font-weight-semibold mt-4 mb-2">Order Form Details:</p> <ul v-if="selectedCommissionTypeDetails.details.orderForm && selectedCommissionTypeDetails.details.orderForm.length > 0" class="text-body-2 text-medium-emphasis"> <li v-for="(item, i) in selectedCommissionTypeDetails.details.orderForm" :key="'order-item-' + i">{{ item }}</li>
+            </ul>
+            <p v-else class="text-body-2 text-medium-emphasis">Order form details not available for this type.</p> </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="#8C90E7" text @click="closeTypeDetailsDialog">Close</v-btn>
@@ -206,13 +209,13 @@
        </v-dialog>
 
 
-    <section class="bg-white py-10 py-md-16">
+    <section class="bg-white py-10 py-md-16 dark-text">
       <v-container>
-        <h2 class="text-h4 font-weight-bold text-center mb-8 dark-text">How to Order</h2> <v-row justify="center">
+        <h2 class="text-h4 font-weight-bold text-center mb-8">How to Order</h2> <v-row justify="center">
           <v-col cols="12" md="8">
             <p class="text-body-1 text-center text-medium-emphasis mb-6"> If you're interested in commissioning me, please fill out the form below with details about your request.
               Make sure you've read the Terms of Service and Terms of Use above.
-              You can also contact me directly via **[Your Preferred Contact Method/Platform, e.g., email@example.com]**.
+              You can also contact me directly via discord (secretceremony) or email (ibelongtothestar@gmail.com).
             </p>
               <ContactForm />
            </v-col>
@@ -248,66 +251,65 @@ export default {
       selectedGalleryImage: null,
       commissionTypesOverview: [
         {
-          id: 1,
-          title: 'Bust Illustration',
-          image: 'https://via.placeholder.com/600x400/FF5733/FFFFFF?text=Bust+Example', // Placeholder image for card
-          shortDescription: 'Shoulder-up character artwork.',
+          id: 1, // Re-indexed ID
+          title: 'Mini Icon',
+          image: 'https://f2.toyhou.se/file/f2-toyhou-se/characters/28423233?1725495158', // Placeholder image (replace with actual)
+          shortDescription: 'Small, square icon artwork (500x500px).',
           details: {
-            fullDescription: 'Detailed illustration focusing on the head and shoulders of a character, with simple or transparent background. Perfect for profile pictures or icons.',
-            basePrice: 'Starts at [Your Base Price, e.g., $50 USD / Rp 750.000]',
-            includes: ['High-resolution digital file (PNG)', 'Simple or transparent background', 'Up to 3 revisions during sketch phase'],
-            // Add more details here like extra character cost, complex background cost, etc.
+            fullDescription: 'I am offering Mini Icon art of any character you desire! The size is 500 x 500 pixels with 350 DPI. By default, it will have a transparent background, but I can include a background if desired (color/gradient or pride flag is OK).',
+            basePrice: '3$ (usd) / 7K (idr)',
+            includes: ['High-resolution digital file (PNG)', 'Simple or transparent background', 'Up to 3 revisions'],
+            // Added Order Form details for Mini Icon
+            orderForm: [
+                'Character: (Link/Ref)',
+                'Expression: (Describe it or include an image if necessary)',
+                'Design Note: (Any specific details to consider while drawing the character)',
+                '(Opt) Background: Color/Gradient/Pride Flag (leave it blank if transparent)',
+                'Contact via: Discord/Toyhouse/Email'
+            ]
           }
         },
-          {
-          id: 2,
-          title: 'Full Body Artwork',
-          image: 'https://via.placeholder.com/600x400/33FF57/FFFFFF?text=Full+Body+Example', // Placeholder image for card
-          shortDescription: 'Complete character illustration from head to toe.',
+        {
+          id: 2, // Re-indexed ID
+          title: 'PWYW Sketch',
+          image: 'https://f2.toyhou.se/file/f2-toyhou-se/characters/31895343?1740916021', // Placeholder image (replace with actual)
+          shortDescription: 'Pay What You Want minimal colored sketch.',
           details: {
-            fullDescription: 'Illustration of a character\'s full body, with optional simple background. Suitable for character references, full illustrations, or design showcases.',
-            basePrice: 'Starts at [Your Base Price, e.g., $100 USD / Rp 1.500.000]',
-             includes: ['High-resolution digital file (PNG)', 'Simple or transparent background', 'Up to 3 revisions during sketch phase'],
-            // Add more details here
+            fullDescription: 'I am offering a PWYW (Pay What You Want) Sketch Commission! There is no minimum amount, but please pay what you think is fair. I offer a minimal colored sketch of any character you desire. By default, I use dark blue for sketching, but you are free to request any other color if desired!',
+            basePrice: 'min 1$ and 5k',
+            includes: ['High-resolution digital file (PNG)', 'Simple or transparent background', 'Up to 3 revisions'],
+             // Added Order Form details for PWYW Sketch
+            orderForm: [
+                'Character: (Link/Ref)',
+                'Prompt: (Ideas like pose and/or expression, optional but preferred)',
+                'Design Note: (Any specific details to consider while drawing the character)',
+                'Lineart Color: (Optional, leave blank otherwise)',
+                'Contact via: Discord/Toyhouse/Email'
+            ]
           }
         },
-          {
-          id: 3,
-          title: 'Emotes/Icons',
-          image: 'https://via.placeholder.com/600x400/3357FF/FFFFFF?text=Emote+Example', // Placeholder image for card
-          shortDescription: 'Small, expressive icons for streaming or chat.',
-          details: {
-            fullDescription: 'Set of small, stylized images perfect for Twitch, Discord, or other platforms. Designed for clarity at small sizes. Price is usually per emote or per pack.',
-            basePrice: 'Starts at [Your Base Price, e.g., $20 USD each / Rp 300.000 each]',
-             includes: ['Digital files in multiple sizes (e.g., 28x28, 56x56, 112x112 px)', 'Simple expression', 'Transparent background'],
-            // Add more details here
-          }
-        },
-        // Add more commission types here following the same structure
-        // Example: Reference Sheet, Character Design, etc.
       ],
       galleryImages: {
-        'Bust Illustration': [
-          { id: 101, image: 'https://via.placeholder.com/800x800/FF5733/CCCCCC?text=Bust+Gallery+1', title: 'Bust Example 1', description: 'A sample bust commission showing X.' },
-          { id: 102, image: 'https://via.placeholder.com/800x800/FF5733/AAAAAA?text=Bust+Gallery+2', title: 'Bust Example 2', description: 'Another example of a bust with Y style.' },
-           // Add more bust examples
+        'Mini Icon': [ // Correct key
+           // Note: These are currently placeholder images from the previous Bust Gallery.
+           // You should replace these with actual Mini Icon examples.
+          { id: 101, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96635855_TxoAVb7hLgsrj4m.png?1740972590', title: 'Ang', description: 'A sample bust commission showing X.' },
+          { id: 102, image: 'https://f2.toyhou.se/file/f2-toyhou-se/images/96635948_RcthxomzTr22ago.png', title: 'Bust Example 2', description: 'Another example of a bust with Y style.' },
+           // Add more actual Mini Icon examples here
         ],
-        'Full Body Artwork': [
-           { id: 201, image: 'https://via.placeholder.com/800x800/33FF57/CCCCCC?text=Full+Body+Gallery+1', title: 'Full Body Example 1', description: 'Sample full body artwork with Z background.' },
-           { id: 202, image: 'https://via.placeholder.com/800x800/33FF57/AAAAAA?text=Full+Body+Gallery+2', title: 'Full Body Example 2', description: 'Another full body piece demonstrating W pose.' },
-          // Add more full body examples
+        'PWYW Sketch': [ // Correct key
+           // Note: These are currently placeholder images from the previous Full Body Gallery.
+           // You should replace these with actual PWYW Sketch examples.
+           { id: 201, image: 'https://f2.toyhou.se/file/f2-toyhou-se/watermarks/96635639_5K901TAgM.png?1740972298', title: 'Full Body Example 1', description: 'Sample full body artwork with Z background.' },
+           { id: 202, image: 'https://f2.toyhou.se/file/f2-toyhou-se/watermarks/96635722_k1OvxC3rD.png', title: 'Full Body Example 2', description: 'Another full body piece demonstrating W pose.' },
+           // Add more actual PWYW Sketch examples here
         ],
-         'Emotes/Icons': [
-           { id: 301, image: 'https://via.placeholder.com/800x800/3357FF/CCCCCC?text=Emote+Gallery+1', title: 'Emote Example 1', description: 'An example emote: happy.' },
-           { id: 302, image: 'https://via.placeholder.com/800x800/3357FF/AAAAAA?text=Emote+Gallery+2', title: 'Emote Example 2', description: 'Another emote example: sad.' },
-          // Add more emote examples
-        ],
-        // Add galleries for other commission types, make sure keys match commissionTypesOverview titles
       }
     };
   },
    mounted() {
     // Set the default active gallery tab to the first type with images
+    // This logic will now work correctly with the updated galleryImages structure
     const firstTypeWithImages = Object.keys(this.galleryImages).find(key => this.galleryImages[key] && this.galleryImages[key].length > 0);
     if (firstTypeWithImages) {
       this.activeGalleryTab = firstTypeWithImages;
@@ -323,7 +325,6 @@ export default {
     },
     closeTypeDetailsDialog() {
       this.typeDetailsDialogOpen = false;
-      // Corrected syntax here: use 'this.selectedCommissionTypeDetails = null;'
       this.selectedCommissionTypeDetails = null;
     },
     openGalleryImageDialog(image) {
@@ -344,7 +345,7 @@ export default {
   cursor: pointer;
 }
 
-/* Apply the chosen dark color from the palette to text elements in sections with light backgrounds */
+/* Apply the chosen dark color (#23254d) to text elements in sections with light backgrounds */
 .dark-text {
     color: #23254d; /* Use the requested very dark purple */
 }
@@ -360,14 +361,35 @@ export default {
     padding-bottom: 8px; /* Reduce default padding below title/subtitle */
 }
 
-/* Style for Will/Won't Draw lists */
-.v-card-text ul {
+/* Style for lists */
+/* Apply dark-text color to lists within dark-text sections */
+.dark-text ul {
     list-style: disc;
     padding-left: 20px; /* Add some padding for the list bullets */
+    color: inherit; /* Ensure lists in dark-text sections inherit the dark-text color */
 }
+
+/* Ensure list items within the dialog's v-card-text use default styling or inherit appropriately */
+/* The .text-medium-emphasis class will apply opacity */
+.v-dialog .v-card-text ul {
+     list-style: disc;
+     padding-left: 20px;
+     color: inherit; /* Inherit dialog's default text color (usually black) */
+}
+
 
 /* Adjust padding for list items if needed */
 .v-card-text ul li {
   margin-bottom: 8px; /* Add space between list items */
 }
+
+/* Override text color for elements where default text-medium-emphasis might be too light on the new dark-text color */
+/* This might be needed depending on the exact shade of text-medium-emphasis and #23254d */
+/* You can uncomment and adjust this rule if the text-medium-emphasis paragraphs are too light */
+/*
+.dark-text .text-medium-emphasis {
+  color: #23254d !important; // Ensure it uses the main dark text color
+  opacity: 1 !important; // Remove opacity if desired
+}
+*/
 </style>
